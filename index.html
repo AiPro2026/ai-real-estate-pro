@@ -3,328 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Real Estate Pro | Open-Access AI Utility Engine</title>
-    <meta name="description" content="100% Free Open-Access AI Prompt Utility for Real Estate Brokers & Agents. 1-Click Luxury Listings, Negotiation Scripts, and Video Hooks.">
-    <!-- Open Graph Metadata -->
-    <meta property="og:title" content="AI Real Estate Pro | Open-Access AI Utility">
-    <meta property="og:description" content="Generate agency-grade real estate copy in seconds for $0. No paywalls, no logins.">
+    <title>AI Real Estate Pro | Free Agent Marketing Asset Builder</title>
+    <meta name="description" content="A free AI marketing assistant for real estate agents. Build listing copy, social posts, follow-ups, open house invites, and seller scripts in minutes.">
+    <meta property="og:title" content="AI Real Estate Pro | Free Agent Marketing Asset Builder">
+    <meta property="og:description" content="Generate listing, social, email, and open-house marketing assets for $0. No paywalls, no logins.">
     <meta property="og:type" content="website">
-    
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        /* Standalone Fallback CSS - Guarantees design works even if external CDN is slow */
+        :root {
+            --ivory: #faf7f0;
+            --linen: #f2eadc;
+            --sand: #e7d9bf;
+            --sage: #a8b5a0;
+            --forest: #1f3d2b;
+            --moss: #5f704f;
+            --champagne: #c6a15b;
+            --clay: #b8795b;
+            --espresso: #2a2118;
+            --charcoal: #3a3833;
+        }
+        html { scroll-behavior: smooth; }
         body {
-            background-color: #020617 !important;
-            color: #f8fafc !important;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+            background:
+                radial-gradient(circle at top left, rgba(198, 161, 91, 0.18), transparent 30rem),
+                linear-gradient(135deg, var(--ivory) 0%, #f7efe2 48%, #edf1e7 100%) !important;
+            color: var(--espresso) !important;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
             margin: 0;
             padding: 0;
         }
-        .header-bg { background-color: #0f172a; border-bottom: 1px solid #1e293b; }
-        .card-bg { background-color: #0f172a; border: 1px solid #1e293b; border-radius: 1rem; padding: 1.5rem; }
-        .accent-emerald { color: #10b981; }
-        .btn-emerald { background-color: #10b981; color: #020617; font-weight: bold; border-radius: 0.75rem; padding: 0.75rem 1.5rem; border: none; cursor: pointer; }
-        .btn-emerald:hover { background-color: #34d399; }
-        .btn-slate { background-color: #1e293b; color: #f8fafc; border-radius: 0.5rem; padding: 0.5rem 1rem; border: 1px solid #334155; cursor: pointer; }
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(2, 6, 23, 0.85);
-            backdrop-filter: blur(8px);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
+        .header-bg { background: rgba(250, 247, 240, 0.92); border-bottom: 1px solid rgba(42, 33, 24, 0.10); backdrop-filter: blur(18px); }
+        .card-bg { background: rgba(255, 252, 246, 0.88); border: 1px solid rgba(42, 33, 24, 0.10); border-radius: 1.5rem; padding: 1.5rem; box-shadow: 0 24px 70px rgba(42, 33, 24, 0.08); }
+        .warm-panel { background: linear-gradient(135deg, rgba(31,61,43,.95), rgba(95,112,79,.92)); color: var(--ivory); }
+        .accent-forest { color: var(--forest); }
+        .accent-gold { color: var(--champagne); }
+        .btn-forest { background: var(--forest); color: var(--ivory); font-weight: 800; border-radius: 999px; padding: 0.85rem 1.45rem; border: 1px solid rgba(31,61,43,.15); cursor: pointer; box-shadow: 0 16px 30px rgba(31, 61, 43, 0.20); transition: transform .18s ease, background .18s ease, box-shadow .18s ease; }
+        .btn-forest:hover { background: #173321; transform: translateY(-1px); box-shadow: 0 18px 38px rgba(31, 61, 43, 0.25); }
+        .btn-sand { background: rgba(255,252,246,.88); color: var(--forest); border-radius: 999px; padding: 0.65rem 1rem; border: 1px solid rgba(31,61,43,.18); cursor: pointer; font-weight: 700; transition: background .18s ease, transform .18s ease; }
+        .btn-sand:hover { background: var(--linen); transform: translateY(-1px); }
+        .field { width: 100%; background: rgba(255,252,246,.9); border: 1px solid rgba(42,33,24,.16); border-radius: 1rem; padding: .8rem .9rem; color: var(--espresso); font-size: .875rem; outline: none; }
+        .field:focus { border-color: var(--forest); box-shadow: 0 0 0 4px rgba(31,61,43,.10); }
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(42, 33, 24, 0.62); backdrop-filter: blur(8px); z-index: 9999; align-items: center; justify-content: center; padding: 1rem; }
         .modal-overlay.active { display: flex !important; }
+        .toast { position: fixed; left: 50%; bottom: 1.25rem; transform: translateX(-50%) translateY(1rem); opacity: 0; pointer-events: none; background: var(--forest); color: var(--ivory); border-radius: 999px; padding: .8rem 1rem; font-size: .8rem; font-weight: 800; box-shadow: 0 18px 50px rgba(42,33,24,.22); transition: opacity .2s, transform .2s; z-index: 10000; }
+        .toast.active { opacity: 1; transform: translateX(-50%) translateY(0); }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col">
-
-    <!-- TOP ANNOUNCEMENT BANNER -->
-    <div style="background-color: #059669; color: #020617; text-align: center; padding: 0.5rem; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">
-        <i class="fa-solid fa-bolt mr-1"></i> Powered by Open-Source AI • 100% Free to All Active Brokers & Agents
+<body class="min-h-screen flex flex-col antialiased">
+    <div class="warm-panel text-center px-4 py-2 text-[0.72rem] font-black uppercase tracking-[0.18em]">
+        <i class="fa-solid fa-house-chimney-window mr-1"></i> Free for agents • Sponsor-supported • Built for daily listing wins
     </div>
 
-    <!-- MAIN HEADER -->
     <header class="header-bg sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg">
-                    AI
-                </div>
+                <div class="w-11 h-11 rounded-2xl flex items-center justify-center font-black text-xl text-white" style="background: linear-gradient(135deg, var(--forest), var(--moss)); box-shadow: 0 12px 30px rgba(31,61,43,.2);">AI</div>
                 <div>
-                    <h1 class="font-extrabold text-lg tracking-tight leading-none text-white">AI REAL ESTATE PRO</h1>
-                    <p class="text-xs text-emerald-400 font-medium tracking-wide">Open-Access Utility Engine</p>
+                    <h1 class="font-black text-lg tracking-tight leading-none" style="color: var(--espresso);">AI REAL ESTATE PRO</h1>
+                    <p class="text-xs font-bold tracking-wide" style="color: var(--moss);">Free Agent Marketing Assistant</p>
                 </div>
             </div>
             <div class="flex items-center space-x-3">
-                <a href="https://airepro.gumroad.com/l/RealEstateMK" target="_blank" class="hidden sm:inline-flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
-                    <i class="fa-solid fa-download text-emerald-400"></i>
-                    <span>Download Offline Kit</span>
+                <a href="https://airepro.gumroad.com/l/RealEstateMK" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center space-x-2 btn-sand text-xs">
+                    <i class="fa-solid fa-gift accent-gold"></i><span>Get Free Agent Toolkit</span>
                 </a>
-                <a href="#interactive-builder" class="btn-emerald text-xs">
-                    Use Generator
-                </a>
+                <a href="#interactive-builder" class="btn-forest text-xs">Build My Asset</a>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
     <main class="flex-grow max-w-6xl mx-auto px-4 py-8 space-y-8">
-        
-        <div class="text-center space-y-4 max-w-3xl mx-auto pt-4">
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                <i class="fa-solid fa-circle text-[8px] mr-2 animate-pulse"></i> v3.0 Open-Source Release
+        <section class="text-center space-y-5 max-w-4xl mx-auto pt-5">
+            <span class="inline-flex items-center px-4 py-2 rounded-full text-xs font-black border" style="background: rgba(198,161,91,.14); color: var(--forest); border-color: rgba(198,161,91,.35);">
+                <i class="fa-solid fa-circle text-[8px] mr-2 animate-pulse accent-gold"></i> v4.0 Agent Marketing Cockpit
             </span>
-            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-                Agency-Grade Copy in <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">6 Seconds</span>
+            <h2 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.02]" style="color: var(--espresso);">
+                Your free AI assistant for <span style="color: var(--forest);">listings, leads, follow-ups & social content</span>.
             </h2>
-            <p class="text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-                Zero Paywalls. No Logins. No Credit Cards. Institutional-grade AI prompts engineered specifically for luxury listings, client outreach, and high-converting video scripts.
+            <p class="text-base sm:text-lg leading-relaxed max-w-3xl mx-auto" style="color: var(--charcoal);">
+                Create ready-to-use real estate marketing assets in minutes: MLS copy, Instagram captions, seller emails, open-house invitations, video scripts, and launch bundles — with no login, no paywall, and no credit card.
             </p>
-        </div>
-
-        <!-- SPONSOR / ADSENSE BANNER PLACEHOLDER -->
-        <div class="w-full bg-slate-900 border border-dashed border-slate-800 rounded-xl p-4 text-center">
-            <div id="google-adsense-top-banner">
-                <p class="text-xs text-slate-500 font-mono uppercase tracking-widest">[ Google AdSense Ready / Partner Sponsorship Slot ]</p>
-                <div class="text-xs text-emerald-400 font-semibold mt-1">Exclusive Sponsorship Slot Available — Preferred Lender Partner</div>
+            <div class="flex flex-wrap justify-center gap-3 text-xs font-black" style="color: var(--forest);">
+                <span class="btn-sand"><i class="fa-solid fa-lock-open mr-1"></i>No login required</span>
+                <span class="btn-sand"><i class="fa-solid fa-scale-balanced mr-1"></i>Compliance-aware prompts</span>
+                <span class="btn-sand"><i class="fa-solid fa-calendar-check mr-1"></i>Built for daily agent workflows</span>
             </div>
-        </div>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                <a href="#interactive-builder" class="btn-forest text-sm"><i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Build My Marketing Asset</a>
+                <a href="https://airepro.gumroad.com/l/RealEstateMK" target="_blank" rel="noopener" class="btn-sand text-sm"><i class="fa-solid fa-download mr-2 accent-gold"></i>Download Free Agent Toolkit</a>
+            </div>
+        </section>
 
-        <!-- INTERACTIVE PROMPT BUILDER UTILITY -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4" id="daily-playbook">
+            <div class="card-bg space-y-3">
+                <p class="text-[11px] font-black uppercase tracking-[.16em] accent-gold">Today’s Agent Playbook</p>
+                <h3 class="text-xl font-black" style="color: var(--espresso);">Daily content that keeps you visible.</h3>
+                <p class="text-sm" style="color: var(--charcoal);">Pick a quick workflow and we’ll prefill the builder with a practical marketing angle.</p>
+            </div>
+            <button class="card-bg text-left playbook-btn" data-asset="Instagram Caption" data-feature="A fresh neighborhood market insight buyers should know this week">
+                <i class="fa-brands fa-instagram accent-gold text-xl"></i>
+                <h4 class="font-black mt-2">Today’s Social Post</h4>
+                <p class="text-xs mt-1" style="color: var(--charcoal);">Create an educational post your sphere can save and share.</p>
+            </button>
+            <button class="card-bg text-left playbook-btn" data-asset="Open House Invite" data-feature="A warm weekend open house with lender-friendly buyer tips">
+                <i class="fa-solid fa-door-open accent-gold text-xl"></i>
+                <h4 class="font-black mt-2">Weekend Open House Push</h4>
+                <p class="text-xs mt-1" style="color: var(--charcoal);">Build a polished invite for email, text, and social.</p>
+            </button>
+        </section>
+
+        <section class="card-bg grid grid-cols-1 lg:grid-cols-[1.15fr_.85fr] gap-6 items-center">
+            <div>
+                <p class="text-[11px] font-black uppercase tracking-[.16em] accent-gold">Free weekly resource</p>
+                <h3 class="text-2xl font-black mt-1" style="color: var(--espresso);">Get the 7-day listing marketing plan.</h3>
+                <p class="text-sm mt-2" style="color: var(--charcoal);">Optional signup. The generator stays free. Use your email only if you want weekly scripts, listing ideas, and sponsor-supported agent resources.</p>
+            </div>
+            <form class="flex flex-col sm:flex-row gap-2" onsubmit="handleSignup(event)">
+                <input class="field" type="email" required placeholder="agent@email.com" aria-label="Email address">
+                <button class="btn-forest whitespace-nowrap" type="submit">Send Me the Plan</button>
+            </form>
+        </section>
+
         <section id="interactive-builder" class="card-bg">
             <div class="flex items-center space-x-3 mb-6">
-                <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
-                    1
+                <div class="w-9 h-9 rounded-2xl flex items-center justify-center font-black text-white" style="background: var(--forest);">1</div>
+                <div>
+                    <h3 class="text-2xl font-black" style="color: var(--espresso);">Agent Marketing Asset Builder</h3>
+                    <p class="text-xs font-semibold" style="color: var(--charcoal);">Generate copy-ready assets, bundles, and prompts for your next client touchpoint.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white">Interactive Prompt Customizer</h3>
             </div>
 
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                <div>
+                    <label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">Asset Type</label>
+                    <select id="asset-type" class="field">
+                        <option>Listing Description</option><option>Instagram Caption</option><option>Reel Script</option><option>Open House Invite</option><option>Seller Follow-Up Email</option><option>Buyer Consultation Script</option><option>Price Reduction Announcement</option><option>Just Sold Post</option><option>Farming Postcard Copy</option><option>Listing Launch Bundle</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">Property Type</label>
+                    <select id="prop-type" class="field"><option>Modern Luxury Villa</option><option>Suburban Family Residence</option><option>Fixer-Upper Opportunity</option><option>Urban High-Rise Condo</option><option>Townhome</option><option>Lakefront Retreat</option></select>
+                </div>
+                <div>
+                    <label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">Target Audience</label>
+                    <select id="target-aud" class="field"><option>High-Net-Worth Investors</option><option>First-Time Homebuyers</option><option>Relocating Executives</option><option>Savvy Value-Add Investors</option><option>Move-Up Families</option><option>Downsizing Sellers</option></select>
+                </div>
+            </div>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Property Type</label>
-                    <select id="prop-type" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
-                        <option value="Modern Luxury Villa">Modern Luxury Villa</option>
-                        <option value="Suburban Family Residence">Suburban Family Residence</option>
-                        <option value="Fixer-Upper Opportunity">Fixer-Upper Opportunity</option>
-                        <option value="Urban High-Rise Condo">Urban High-Rise Condo</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Target Audience</label>
-                    <select id="target-aud" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
-                        <option value="High-Net-Worth Investors">High-Net-Worth Investors</option>
-                        <option value="First-Time Homebuyers">First-Time Homebuyers</option>
-                        <option value="Relocating Executives">Relocating Executives</option>
-                        <option value="Savvy Value-Add Investors">Savvy Value-Add Investors</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Key Highlight Feature</label>
-                    <input type="text" id="prop-feature" value="Panoramic Sunset Ocean Views" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-emerald-500" placeholder="e.g. Designer Kitchen">
-                </div>
+                <div><label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">City / Neighborhood</label><input type="text" id="neighborhood" value="Coastal Heights" class="field" placeholder="e.g. Westlake Village"></div>
+                <div><label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">Price / Bed-Bath</label><input type="text" id="property-stats" value="$1.2M • 4 bed • 3 bath" class="field" placeholder="e.g. $750K • 3 bed • 2 bath"></div>
+                <div><label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">Key Feature / CTA</label><input type="text" id="prop-feature" value="Panoramic sunset ocean views; book a private showing" class="field" placeholder="e.g. Designer kitchen; DM for tour"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div><label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">Tone</label><select id="tone" class="field"><option>Warm Luxury</option><option>Friendly Educational</option><option>Polished Professional</option><option>Urgent but Calm</option><option>Investor-Focused</option></select></div>
+                <div><label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">Agent Goal</label><input type="text" id="agent-goal" value="Win more qualified showing requests" class="field" placeholder="e.g. Re-engage cold seller leads"></div>
             </div>
 
-            <button onclick="generateCustomPrompt()" class="w-full btn-emerald text-sm py-3.5 px-6 flex items-center justify-center space-x-2">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-                <span>Generate Customized Prompt</span>
-            </button>
+            <button onclick="generateCustomPrompt()" class="w-full btn-forest text-sm py-4 px-6 flex items-center justify-center space-x-2"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Generate Marketing Asset Prompt</span></button>
 
-            <!-- CUSTOM PROMPT OUTPUT BOX -->
-            <div class="mt-6 bg-slate-950 border border-slate-800 rounded-xl p-4 relative">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-xs font-mono text-emerald-400 font-bold uppercase"><i class="fa-solid fa-code text-[10px] mr-1"></i> Generated Prompt Output</span>
-                    <button onclick="copyOutput()" id="copy-btn" class="btn-slate text-xs flex items-center space-x-1">
-                        <i class="fa-regular fa-copy"></i>
-                        <span id="copy-text">Copy Prompt</span>
-                    </button>
+            <div class="mt-6 border rounded-2xl p-4 relative" style="background: rgba(31,61,43,.045); border-color: rgba(31,61,43,.14);">
+                <div class="flex items-center justify-between gap-3 mb-3">
+                    <span class="text-xs font-black uppercase tracking-wider" style="color: var(--forest);"><i class="fa-solid fa-file-lines text-[10px] mr-1"></i> Generated Output</span>
+                    <button onclick="copyOutput()" id="copy-btn" class="btn-sand text-xs flex items-center space-x-1"><i class="fa-regular fa-copy"></i><span id="copy-text">Copy Prompt</span></button>
                 </div>
-                <p id="prompt-output" class="text-xs sm:text-sm font-mono text-slate-300 leading-relaxed whitespace-pre-wrap">Act as a senior real estate copywriter. Write a compelling, emotion-driven listing for a Modern Luxury Villa targeting High-Net-Worth Investors. Highlight 'Panoramic Sunset Ocean Views' using sensory details, high-end architectural terminology, and a strong call-to-action for private showings.</p>
+                <p id="prompt-output" class="text-sm font-mono leading-relaxed whitespace-pre-wrap" style="color: var(--espresso);">Act as a senior real estate marketing strategist. Create a warm luxury Listing Description for a Modern Luxury Villa in Coastal Heights targeting High-Net-Worth Investors. Include these details: $1.2M • 4 bed • 3 bath. Highlight: Panoramic sunset ocean views; book a private showing. Goal: Win more qualified showing requests. Avoid Fair Housing violations, protected-class references, steering language, exaggerated claims, and unverifiable facts. Use only provided details and mark missing facts as placeholders.</p>
+                <p class="text-[11px] mt-3" style="color: var(--charcoal);"><i class="fa-solid fa-scale-balanced mr-1 accent-gold"></i> Compliance reminder: verify property facts, local advertising rules, MLS requirements, and Fair Housing language before publishing.</p>
             </div>
+
+            <aside id="resource-panel" class="mt-5 rounded-2xl p-4 border" style="background: linear-gradient(135deg, rgba(198,161,91,.16), rgba(168,181,160,.16)); border-color: rgba(198,161,91,.28);">
+                <p class="text-[11px] font-black uppercase tracking-[.16em] accent-gold">Recommended Agent Resource</p>
+                <h4 id="resource-title" class="font-black mt-1" style="color: var(--espresso);">Listing marketing partners</h4>
+                <p id="resource-copy" class="text-sm mt-1" style="color: var(--charcoal);">Pair your new copy with listing photography, virtual staging, print flyers, or a single-property website.</p>
+                <a id="resource-link" href="mailto:airehq@proton.me?subject=Sponsor%20AI%20Real%20Estate%20Pro" class="inline-flex mt-3 btn-sand text-xs" target="_blank" rel="noopener sponsored">Sponsor this workflow</a>
+            </aside>
         </section>
 
-        <!-- PROMPT LIBRARY CATEGORY TABS -->
         <section class="space-y-6">
-            <div class="flex items-center justify-between">
-                <h3 class="text-xl font-bold text-white">Full Prompt Library (100% Free)</h3>
-                <span class="text-xs font-mono text-slate-400">100+ Verified Assets</span>
+            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
+                <div>
+                    <h3 class="text-2xl font-black" style="color: var(--espresso);">Starter Prompt Library</h3>
+                    <p class="text-sm" style="color: var(--charcoal);">A practical starter set. Download the free toolkit for the expanded agent library.</p>
+                </div>
+                <span class="text-xs font-black accent-gold">Free toolkit available</span>
             </div>
-
-            <!-- CATEGORY FILTER BUTTONS -->
             <div class="flex flex-wrap gap-2">
-                <button onclick="filterCategory('all')" class="cat-btn btn-emerald text-xs">All Prompts</button>
-                <button onclick="filterCategory('listings')" class="cat-btn btn-slate text-xs">Listings</button>
-                <button onclick="filterCategory('outreach')" class="cat-btn btn-slate text-xs">Client Outreach</button>
-                <button onclick="filterCategory('negotiation')" class="cat-btn btn-slate text-xs">Negotiation</button>
-                <button onclick="filterCategory('reels')" class="cat-btn btn-slate text-xs">Reel Scripts</button>
+                <button data-cat="all" class="cat-btn btn-forest text-xs">All Prompts</button>
+                <button data-cat="listings" class="cat-btn btn-sand text-xs">Listings</button>
+                <button data-cat="outreach" class="cat-btn btn-sand text-xs">Client Outreach</button>
+                <button data-cat="negotiation" class="cat-btn btn-sand text-xs">Negotiation</button>
+                <button data-cat="reels" class="cat-btn btn-sand text-xs">Reel Scripts</button>
             </div>
-
-            <!-- CARDS CONTAINER -->
-            <div id="prompt-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Cards injected dynamically via JS -->
-            </div>
+            <div id="sponsor-card"></div>
+            <div id="prompt-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </section>
 
-        <!-- BOTTOM ADSENSE / SPONSOR BANNER -->
-        <div class="w-full bg-slate-900 border border-dashed border-slate-800 rounded-xl p-4 text-center">
-            <div id="google-adsense-bottom-banner">
-                <p class="text-xs text-slate-500 font-mono uppercase tracking-widest">[ Google AdSense / Sponsor Placement ]</p>
-                <div class="text-xs text-slate-400 mt-1">High-RPM Real Estate & Financial Services Ad Space</div>
-            </div>
+        <div class="card-bg text-center">
+            <p class="text-[11px] font-black uppercase tracking-[.16em] accent-gold">Sponsor-supported and free for agents</p>
+            <h3 class="text-xl font-black mt-1" style="color: var(--espresso);">Want your real estate service in front of active agents?</h3>
+            <p class="text-sm mt-1" style="color: var(--charcoal);">Sponsor a category, daily playbook, or high-intent workflow without interrupting the free user experience.</p>
+            <a href="mailto:airehq@proton.me?subject=Sponsor%20AI%20Real%20Estate%20Pro" class="inline-flex mt-4 btn-forest text-sm">Sponsor This Tool</a>
         </div>
-
     </main>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-slate-800 bg-slate-900 py-8 mt-12">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-            <div>
-                <p class="font-semibold text-slate-300">AI Real Estate Pro © 2026</p>
-                <p class="text-[11px] text-slate-500">Open-Access Utility for Licensed Real Estate Brokers & Agents.</p>
-            </div>
-            <div class="flex items-center space-x-4 text-slate-400">
-                <button onclick="openModal('privacy-modal')" class="hover:text-emerald-400 transition cursor-pointer text-xs font-medium bg-transparent border-none text-slate-400">Privacy Policy (GDPR)</button>
-                <span>•</span>
-                <button onclick="openModal('terms-modal')" class="hover:text-emerald-400 transition cursor-pointer text-xs font-medium bg-transparent border-none text-slate-400">Terms of Use</button>
-                <span>•</span>
-                <a href="mailto:airehq@proton.me" class="hover:text-emerald-400 transition">Sponsor Inquiries</a>
-            </div>
+    <footer class="border-t py-8 mt-12" style="background: rgba(255,252,246,.65); border-color: rgba(42,33,24,.10);">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between text-xs gap-4" style="color: var(--charcoal);">
+            <div><p class="font-black" style="color: var(--espresso);">AI Real Estate Pro © 2026</p><p>Free, sponsor-supported utility for licensed real estate brokers & agents.</p></div>
+            <div class="flex items-center space-x-4"><button onclick="openModal('privacy-modal')" class="hover:underline bg-transparent border-none cursor-pointer">Privacy Policy</button><span>•</span><button onclick="openModal('terms-modal')" class="hover:underline bg-transparent border-none cursor-pointer">Terms of Use</button><span>•</span><a href="mailto:airehq@proton.me" class="hover:underline">Sponsor Inquiries</a></div>
         </div>
     </footer>
 
-    <!-- PRIVACY POLICY MODAL -->
-    <div id="privacy-modal" class="modal-overlay">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 space-y-4">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                <h3 class="text-lg font-bold text-white">Privacy Policy & Cookie Disclosures</h3>
-                <button onclick="closeModal('privacy-modal')" class="text-slate-400 hover:text-white text-xl font-bold bg-transparent border-none">&times;</button>
-            </div>
-            <div class="text-xs text-slate-300 space-y-3 leading-relaxed">
-                <p><strong>1. Information We Do Not Collect:</strong> AI Real Estate Pro is an open-access utility. We do not require user registration, passwords, names, or credit card information.</p>
-                <p><strong>2. Google AdSense & Third-Party Advertising:</strong> Third party vendors, including Google, use cookies to serve ads based on a user's prior visits to this or other websites. Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to your sites and/or other sites on the Internet.</p>
-                <p><strong>3. Cookie Opt-Out:</strong> Users may opt out of personalized advertising by visiting <a href="https://www.aboutads.info" target="_blank" class="text-emerald-400 underline">AboutAds.info</a> or adjusting their browser privacy settings.</p>
-                <p><strong>4. Contact & POPIA/GDPR Inquiries:</strong> For privacy inquiries, email <a href="mailto:airepro@proton.me" class="text-emerald-400 underline">airepro@proton.me</a>.</p>
-            </div>
-            <button onclick="closeModal('privacy-modal')" class="w-full btn-emerald text-xs mt-4">Close Privacy Policy</button>
-        </div>
-    </div>
+    <div id="privacy-modal" class="modal-overlay"><div class="card-bg max-w-2xl w-full max-h-[85vh] overflow-y-auto space-y-4"><div class="flex items-center justify-between border-b pb-3"><h3 class="text-lg font-black">Privacy Policy & Cookie Disclosures</h3><button onclick="closeModal('privacy-modal')" class="text-2xl bg-transparent border-none cursor-pointer">&times;</button></div><div class="text-sm space-y-3 leading-relaxed"><p><strong>1. Information We Do Not Collect:</strong> AI Real Estate Pro does not require user registration, passwords, names, or credit card information to use the generator.</p><p><strong>2. Optional Email:</strong> If you request a toolkit or weekly plan, your email may be used to send agent resources and sponsor-supported updates.</p><p><strong>3. Advertising & Sponsor Links:</strong> Third-party sponsors or advertising partners may use cookies or tracking on their own sites after you click their links.</p><p><strong>4. Contact:</strong> For privacy inquiries, email <a href="mailto:airepro@proton.me" class="underline">airepro@proton.me</a>.</p></div><button onclick="closeModal('privacy-modal')" class="w-full btn-forest text-xs mt-4">Close Privacy Policy</button></div></div>
+    <div id="terms-modal" class="modal-overlay"><div class="card-bg max-w-2xl w-full max-h-[85vh] overflow-y-auto space-y-4"><div class="flex items-center justify-between border-b pb-3"><h3 class="text-lg font-black">Terms of Use & AI Disclaimer</h3><button onclick="closeModal('terms-modal')" class="text-2xl bg-transparent border-none cursor-pointer">&times;</button></div><div class="text-sm space-y-3 leading-relaxed"><p><strong>1. Acceptance of Terms:</strong> By accessing and using AI Real Estate Pro, you agree to these Terms of Use.</p><p><strong>2. AI Output & Compliance Responsibility:</strong> Prompts and generated text templates are productivity tools only. Users retain legal responsibility for reviewing and verifying all outputs before publishing.</p><p><strong>3. Fair Housing & Local Real Estate Laws:</strong> Users must ensure published property descriptions comply with Fair Housing guidelines, local advertising standards, MLS rules, and property misrepresentation laws.</p><p><strong>4. Limitation of Liability:</strong> AI Real Estate Pro accepts no liability for factual errors, lost contracts, or regulatory outcomes from unverified AI-assisted content.</p></div><button onclick="closeModal('terms-modal')" class="w-full btn-forest text-xs mt-4">Close Terms of Use</button></div></div>
+    <div id="toast" class="toast">Copied to clipboard</div>
 
-    <!-- TERMS OF USE MODAL -->
-    <div id="terms-modal" class="modal-overlay">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 space-y-4">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                <h3 class="text-lg font-bold text-white">Terms of Use & AI Disclaimer</h3>
-                <button onclick="closeModal('terms-modal')" class="text-slate-400 hover:text-white text-xl font-bold bg-transparent border-none">&times;</button>
-            </div>
-            <div class="text-xs text-slate-300 space-y-3 leading-relaxed">
-                <p><strong>1. Acceptance of Terms:</strong> By accessing and using AI Real Estate Pro, you agree to these Terms of Use.</p>
-                <p><strong>2. AI Output & Compliance Responsibility:</strong> All prompts and generated text templates are provided for educational and productivity purposes only. Users (licensed real estate agents and brokers) retain 100% legal responsibility for reviewing, fact-checking, and verifying all AI-generated copy prior to publishing on MLS, social media, or marketing materials.</p>
-                <p><strong>3. Fair Housing & Local Real Estate Laws:</strong> Users must ensure all published property descriptions comply with Fair Housing Act guidelines, regional real estate advertising standards, and local property misrepresentation laws.</p>
-                <p><strong>4. Limitation of Liability:</strong> AI Real Estate Pro accepts zero liability for factual errors, lost contracts, or regulatory fines resulting from unverified AI output usage.</p>
-            </div>
-            <button onclick="closeModal('terms-modal')" class="w-full btn-emerald text-xs mt-4">Close Terms of Use</button>
-        </div>
-    </div>
-
-    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
     <script>
+        const compliance = "Avoid Fair Housing violations, protected-class references, steering language, exaggerated claims, and unverifiable facts. Use only provided details and mark missing facts as placeholders.";
         const promptData = [
-            {
-                id: 1,
-                category: "listings",
-                title: "The Architectural Luxury Masterpiece",
-                conversion: "+34% Zillow Click-Through Rate",
-                prompt: "Act as an architectural real estate copywriter. Write a 250-word property listing for [Property Type] located in [Neighborhood]. Emphasize structural volume, natural light orientation, and premium materials. End with an exclusive private showing call-to-action."
-            },
-            {
-                id: 2,
-                category: "outreach",
-                title: "Expired Listing Re-Engagement Email",
-                conversion: "18% Cold Response Rate",
-                prompt: "Write a high-empathy email sequence to a seller whose home expired on MLS after 90 days. Acknowledge frustration, present a fresh 30-day marketing audit strategy, and request a 10-minute coffee meeting without being salesy."
-            },
-            {
-                id: 3,
-                category: "negotiation",
-                title: "Appraisal Gap Bridge Script",
-                conversion: "Closes 82% of Valuation Gaps",
-                prompt: "Act as a senior listing agent. Draft a persuasive response to a buyer's agent after an appraisal comes in $20,000 below contract price. Provide market data justification, highlight local absorption rates, and propose a 50/50 split compromise."
-            },
-            {
-                id: 4,
-                category: "reels",
-                title: "Viral 'Market Myth-Buster' Reel Hook",
-                conversion: "4.2x Organic View Retention",
-                prompt: "Write a 30-second Instagram Reel script busting the myth that 'Interest rates make it impossible to buy in 2026'. Include a strong 3-second opening hook, 3 bullet points on seller concessions, and an on-screen text callout."
-            }
+            { id: 1, category: "listings", title: "The Architectural Luxury Listing", conversion: "Optimized for premium listing appeal", prompt: `Act as an architectural real estate copywriter. Write a 250-word property listing for [Property Type] located in [Neighborhood]. Emphasize natural light, layout flow, premium materials, and lifestyle benefits. End with a private showing call-to-action. ${compliance}` },
+            { id: 2, category: "outreach", title: "Expired Listing Re-Engagement Email", conversion: "Built for expired-listing outreach", prompt: `Write a high-empathy email sequence to a seller whose home expired on MLS after 90 days. Acknowledge frustration, present a fresh 30-day marketing audit strategy, and request a 10-minute coffee meeting without pressure. ${compliance}` },
+            { id: 3, category: "negotiation", title: "Appraisal Gap Bridge Script", conversion: "Useful for appraisal-gap conversations", prompt: `Act as a senior listing agent. Draft a calm response to a buyer's agent after an appraisal comes in below contract price. Ask for supporting data, reference local comparable sales placeholders, and propose practical paths forward. ${compliance}` },
+            { id: 4, category: "reels", title: "Market Myth-Buster Reel Hook", conversion: "Structured for short-form retention", prompt: `Write a 30-second Instagram Reel script busting a common local market myth. Include a 3-second hook, 3 educational points, on-screen text, and a soft CTA to book a buyer or seller consult. ${compliance}` },
+            { id: 5, category: "listings", title: "Open House Weekend Invite", conversion: "Designed for warm event attendance", prompt: `Create an open house invitation for [Address/Neighborhood]. Include date/time placeholders, 3 property highlights, parking/access notes, and a friendly CTA to RSVP or stop by. ${compliance}` },
+            { id: 6, category: "outreach", title: "Sphere Check-In Text", conversion: "Built for relationship nurturing", prompt: `Write 3 short, warm text messages to check in with past clients and sphere contacts without sounding salesy. Include one helpful market insight placeholder and one soft referral ask. ${compliance}` }
         ];
+        const sponsorData = {
+            all: { title: "Sponsor this agent resource hub", copy: "Reach agents while they are actively creating listing, client, and social marketing assets.", cta: "Sponsor this hub" },
+            listings: { title: "Listing Marketing Partner Slot", copy: "Ideal for photographers, virtual staging studios, listing websites, sign vendors, and print/mail partners.", cta: "Sponsor listings" },
+            outreach: { title: "CRM & Follow-Up Partner Slot", copy: "Ideal for CRMs, email automation tools, ISA services, and lead nurture platforms.", cta: "Sponsor outreach" },
+            negotiation: { title: "Transaction Partner Slot", copy: "Ideal for lenders, title partners, transaction coordinators, and market data tools.", cta: "Sponsor negotiation" },
+            reels: { title: "Social Content Partner Slot", copy: "Ideal for schedulers, video editing tools, content teams, and social media coaches.", cta: "Sponsor reels" }
+        };
+        const resourceMap = {
+            "Listing Description": ["Listing marketing partners", "Pair your new copy with listing photography, virtual staging, print flyers, or a single-property website."],
+            "Instagram Caption": ["Social scheduling tools", "Turn this caption into a weekly content plan with a scheduler or video editing workflow."],
+            "Reel Script": ["Video editing partner", "Use a short-form editing or teleprompter tool to publish faster and stay consistent."],
+            "Open House Invite": ["Open house resource partner", "Add signs, lender co-branded flyers, QR lead capture, and postcard reminders."],
+            "Seller Follow-Up Email": ["CRM automation partner", "Automate follow-ups, reminders, and seller nurture campaigns in your CRM."],
+            "Buyer Consultation Script": ["Mortgage partner resource", "Pair buyer education scripts with lender pre-approval and affordability resources."],
+            "Price Reduction Announcement": ["Seller update toolkit", "Create compliant pricing visuals, email alerts, and social graphics for your adjustment."],
+            "Just Sold Post": ["Review and referral partner", "Convert sold stories into reviews, referrals, and neighborhood proof points."],
+            "Farming Postcard Copy": ["Print and mail partner", "Send your neighborhood copy as postcards, door hangers, or local market mailers."],
+            "Listing Launch Bundle": ["Full launch partner stack", "Combine photography, staging, flyers, social scheduling, and single-property pages for a polished launch."]
+        };
 
-        function renderPrompts(items) {
+        function renderPrompts(items, cat = 'all') {
             const grid = document.getElementById("prompt-grid");
             grid.innerHTML = items.map(p => `
-                <div class="card-bg space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">${p.category}</span>
-                        <span class="text-[11px] font-semibold text-teal-300"><i class="fa-solid fa-chart-line mr-1"></i>${p.conversion}</span>
+                <article class="card-bg space-y-3">
+                    <div class="flex items-center justify-between gap-3">
+                        <span class="text-[10px] font-black uppercase px-2 py-1 rounded-full" style="background: rgba(31,61,43,.09); color: var(--forest);">${p.category}</span>
+                        <span class="text-[11px] font-bold accent-gold"><i class="fa-solid fa-chart-line mr-1"></i>${p.conversion}</span>
                     </div>
-                    <h4 class="font-bold text-white text-base">${p.title}</h4>
-                    <p class="text-xs font-mono text-slate-300 bg-slate-950 p-3 rounded-lg border border-slate-800/80 leading-relaxed">${p.prompt}</p>
-                    <button onclick="copyText('${p.prompt.replace(/'/g, "\'")}')" class="w-full btn-slate text-xs flex items-center justify-center space-x-1">
-                        <i class="fa-regular fa-copy"></i>
-                        <span>Copy Prompt</span>
-                    </button>
-                </div>
-            `).join("");
+                    <h4 class="font-black text-base" style="color: var(--espresso);">${p.title}</h4>
+                    <p class="text-xs font-mono p-3 rounded-xl border leading-relaxed" style="background: rgba(31,61,43,.045); border-color: rgba(31,61,43,.12); color: var(--charcoal);">${p.prompt}</p>
+                    <button data-prompt-id="${p.id}" class="copy-prompt-btn w-full btn-sand text-xs flex items-center justify-center space-x-1"><i class="fa-regular fa-copy"></i><span>Copy Prompt</span></button>
+                </article>`).join("");
+            renderSponsor(cat);
+            bindCopyButtons();
         }
-
+        function renderSponsor(cat) {
+            const s = sponsorData[cat] || sponsorData.all;
+            document.getElementById('sponsor-card').innerHTML = `<div class="rounded-2xl p-4 border" style="background: rgba(255,252,246,.72); border-color: rgba(198,161,91,.30);"><p class="text-[10px] font-black uppercase tracking-[.16em] accent-gold">Sponsored agent resource</p><div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mt-1"><div><h4 class="font-black" style="color: var(--espresso);">${s.title}</h4><p class="text-sm" style="color: var(--charcoal);">${s.copy}</p></div><a class="btn-sand text-xs whitespace-nowrap" href="mailto:airehq@proton.me?subject=${encodeURIComponent(s.cta)}" rel="noopener sponsored">${s.cta}</a></div></div>`;
+        }
+        function buildBundle(type, aud, feat, n, stats, tone, goal) {
+            return `Act as a senior real estate marketing strategist. Create a complete Listing Launch Bundle for a ${type} in ${n} targeting ${aud}. Details: ${stats}. Key feature and CTA: ${feat}. Tone: ${tone}. Goal: ${goal}.\n\nProduce:\n1. MLS-friendly listing description\n2. Zillow/Realtor.com portal description\n3. Instagram caption with hashtags\n4. 30-second Reel script\n5. Email to sphere of influence\n6. Open house invitation\n7. Seller update text message\n\n${compliance}`;
+        }
         function generateCustomPrompt() {
+            const asset = document.getElementById("asset-type").value;
             const type = document.getElementById("prop-type").value;
             const aud = document.getElementById("target-aud").value;
             const feat = document.getElementById("prop-feature").value;
-
-            const text = `Act as a senior real estate copywriter. Write a compelling, emotion-driven listing for a ${type} targeting ${aud}. Highlight '${feat}' using sensory details, high-end architectural terminology, and a strong call-to-action for private showings.`;
+            const n = document.getElementById("neighborhood").value || "[Neighborhood]";
+            const stats = document.getElementById("property-stats").value || "[Price / beds / baths]";
+            const tone = document.getElementById("tone").value;
+            const goal = document.getElementById("agent-goal").value || "[Agent goal]";
+            const text = asset === "Listing Launch Bundle" ? buildBundle(type, aud, feat, n, stats, tone, goal) : `Act as a senior real estate marketing strategist. Create a ${tone} ${asset} for a ${type} in ${n} targeting ${aud}. Include these details: ${stats}. Highlight and call-to-action: ${feat}. Goal: ${goal}. Make it practical, polished, and ready for an agent to adapt. ${compliance}`;
             document.getElementById("prompt-output").innerText = text;
+            updateResourcePanel(asset);
         }
-
+        function updateResourcePanel(asset) {
+            const [title, copy] = resourceMap[asset] || resourceMap["Listing Description"];
+            document.getElementById('resource-title').innerText = title;
+            document.getElementById('resource-copy').innerText = copy;
+        }
+        function showToast(message = 'Copied to clipboard') {
+            const toast = document.getElementById('toast');
+            toast.innerText = message; toast.classList.add('active');
+            setTimeout(() => toast.classList.remove('active'), 1800);
+        }
         function copyOutput() {
-            const text = document.getElementById("prompt-output").innerText;
-            navigator.clipboard.writeText(text);
-            const btn = document.getElementById("copy-text");
-            btn.innerText = "Copied!";
-            setTimeout(() => { btn.innerText = "Copy Prompt"; }, 2000);
+            navigator.clipboard.writeText(document.getElementById("prompt-output").innerText);
+            const btn = document.getElementById("copy-text"); btn.innerText = "Copied!"; showToast();
+            setTimeout(() => { btn.innerText = "Copy Prompt"; }, 1800);
         }
-
-        function copyText(text) {
-            navigator.clipboard.writeText(text);
-            alert("Prompt copied to clipboard!");
+        function bindCopyButtons() {
+            document.querySelectorAll('.copy-prompt-btn').forEach(btn => btn.addEventListener('click', () => {
+                const prompt = promptData.find(p => String(p.id) === btn.dataset.promptId)?.prompt || '';
+                navigator.clipboard.writeText(prompt);
+                const label = btn.querySelector('span'); label.innerText = 'Copied!'; showToast();
+                setTimeout(() => label.innerText = 'Copy Prompt', 1800);
+            }));
         }
-
         function filterCategory(cat) {
-            if (cat === 'all') {
-                renderPrompts(promptData);
-            } else {
-                renderPrompts(promptData.filter(p => p.category === cat));
-            }
+            document.querySelectorAll('.cat-btn').forEach(btn => { btn.className = `cat-btn ${btn.dataset.cat === cat ? 'btn-forest' : 'btn-sand'} text-xs`; });
+            renderPrompts(cat === 'all' ? promptData : promptData.filter(p => p.category === cat), cat);
         }
-
-        function openModal(id) {
-            const el = document.getElementById(id);
-            if (el) el.classList.add('active');
-        }
-
-        function closeModal(id) {
-            const el = document.getElementById(id);
-            if (el) el.classList.remove('active');
-        }
-
-        // Initial Load
+        function handleSignup(event) { event.preventDefault(); showToast('Plan request captured — connect your email provider next'); event.target.reset(); }
+        function openModal(id) { const el = document.getElementById(id); if (el) el.classList.add('active'); }
+        function closeModal(id) { const el = document.getElementById(id); if (el) el.classList.remove('active'); }
+        document.querySelectorAll('.cat-btn').forEach(btn => btn.addEventListener('click', () => filterCategory(btn.dataset.cat)));
+        document.querySelectorAll('.playbook-btn').forEach(btn => btn.addEventListener('click', () => { document.getElementById('asset-type').value = btn.dataset.asset; document.getElementById('prop-feature').value = btn.dataset.feature; generateCustomPrompt(); document.getElementById('interactive-builder').scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
+        document.getElementById('asset-type').addEventListener('change', e => updateResourcePanel(e.target.value));
         renderPrompts(promptData);
     </script>
 </body>
