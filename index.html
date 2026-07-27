@@ -1,38 +1,331 @@
 <!DOCTYPE html>
-POWERED BY OPEN-SOURCE AI • 100% FREE TO ALL ACTIVE BROKERS & AGENTS
-AI
-AI REAL ESTATE PRO
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Real Estate Pro | Open-Access AI Utility Engine</title>
+    <meta name="description" content="100% Free Open-Access AI Prompt Utility for Real Estate Brokers & Agents. 1-Click Luxury Listings, Negotiation Scripts, and Video Hooks.">
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="AI Real Estate Pro | Open-Access AI Utility">
+    <meta property="og:description" content="Generate agency-grade real estate copy in seconds for $0. No paywalls, no logins.">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Standalone Fallback CSS - Guarantees design works even if external CDN is slow */
+        body {
+            background-color: #020617 !important;
+            color: #f8fafc !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+            margin: 0;
+            padding: 0;
+        }
+        .header-bg { background-color: #0f172a; border-bottom: 1px solid #1e293b; }
+        .card-bg { background-color: #0f172a; border: 1px solid #1e293b; border-radius: 1rem; padding: 1.5rem; }
+        .accent-emerald { color: #10b981; }
+        .btn-emerald { background-color: #10b981; color: #020617; font-weight: bold; border-radius: 0.75rem; padding: 0.75rem 1.5rem; border: none; cursor: pointer; }
+        .btn-emerald:hover { background-color: #34d399; }
+        .btn-slate { background-color: #1e293b; color: #f8fafc; border-radius: 0.5rem; padding: 0.5rem 1rem; border: 1px solid #334155; cursor: pointer; }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .modal-overlay.active { display: flex !important; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col">
 
-Open-Access Utility Engine
+    <!-- TOP ANNOUNCEMENT BANNER -->
+    <div style="background-color: #059669; color: #020617; text-align: center; padding: 0.5rem; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">
+        <i class="fa-solid fa-bolt mr-1"></i> Powered by Open-Source AI • 100% Free to All Active Brokers & Agents
+    </div>
 
-Download Offline Kit Use Generator
-v3.0 Open-Source Release
-Agency-Grade Copy in 6 Seconds
+    <!-- MAIN HEADER -->
+    <header class="header-bg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg">
+                    AI
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-lg tracking-tight leading-none text-white">AI REAL ESTATE PRO</h1>
+                    <p class="text-xs text-emerald-400 font-medium tracking-wide">Open-Access Utility Engine</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="https://airepro.gumroad.com/l/RealEstateMK" target="_blank" class="hidden sm:inline-flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+                    <i class="fa-solid fa-download text-emerald-400"></i>
+                    <span>Download Offline Kit</span>
+                </a>
+                <a href="#interactive-builder" class="btn-emerald text-xs">
+                    Use Generator
+                </a>
+            </div>
+        </div>
+    </header>
 
-Zero Paywalls. No Logins. No Credit Cards. Institutional-grade AI prompts engineered specifically for luxury listings, client outreach, and high-converting video scripts.
+    <!-- HERO SECTION -->
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-8 space-y-8">
+        
+        <div class="text-center space-y-4 max-w-3xl mx-auto pt-4">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <i class="fa-solid fa-circle text-[8px] mr-2 animate-pulse"></i> v3.0 Open-Source Release
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                Agency-Grade Copy in <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">6 Seconds</span>
+            </h2>
+            <p class="text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
+                Zero Paywalls. No Logins. No Credit Cards. Institutional-grade AI prompts engineered specifically for luxury listings, client outreach, and high-converting video scripts.
+            </p>
+        </div>
 
-[ Google AdSense Ready / Partner Sponsorship Slot ]
+        <!-- SPONSOR / ADSENSE BANNER PLACEHOLDER -->
+        <div class="w-full bg-slate-900 border border-dashed border-slate-800 rounded-xl p-4 text-center">
+            <div id="google-adsense-top-banner">
+                <p class="text-xs text-slate-500 font-mono uppercase tracking-widest">[ Google AdSense Ready / Partner Sponsorship Slot ]</p>
+                <div class="text-xs text-emerald-400 font-semibold mt-1">Exclusive Sponsorship Slot Available — Preferred Lender Partner</div>
+            </div>
+        </div>
 
-Exclusive Sponsorship Slot Available — Preferred Lender Partner
-1
-Interactive Prompt Customizer
+        <!-- INTERACTIVE PROMPT BUILDER UTILITY -->
+        <section id="interactive-builder" class="card-bg">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
+                    1
+                </div>
+                <h3 class="text-xl font-bold text-white">Interactive Prompt Customizer</h3>
+            </div>
 
-Property Type  
-Target Audience  
-Key Highlight Feature  
-Generate Customized Prompt
-Generated Prompt Output  Copy Prompt
-Act as a senior real estate copywriter. Write a compelling, emotion-driven listing for a Modern Luxury Villa targeting High-Net-Worth Investors. Highlight 'Panoramic Sunset Ocean Views' using sensory details, high-end architectural terminology, and a strong call-to-action for private showings.
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Property Type</label>
+                    <select id="prop-type" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+                        <option value="Modern Luxury Villa">Modern Luxury Villa</option>
+                        <option value="Suburban Family Residence">Suburban Family Residence</option>
+                        <option value="Fixer-Upper Opportunity">Fixer-Upper Opportunity</option>
+                        <option value="Urban High-Rise Condo">Urban High-Rise Condo</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Target Audience</label>
+                    <select id="target-aud" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+                        <option value="High-Net-Worth Investors">High-Net-Worth Investors</option>
+                        <option value="First-Time Homebuyers">First-Time Homebuyers</option>
+                        <option value="Relocating Executives">Relocating Executives</option>
+                        <option value="Savvy Value-Add Investors">Savvy Value-Add Investors</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Key Highlight Feature</label>
+                    <input type="text" id="prop-feature" value="Panoramic Sunset Ocean Views" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-emerald-500" placeholder="e.g. Designer Kitchen">
+                </div>
+            </div>
 
-Full Prompt Library (100% Free)
+            <button onclick="generateCustomPrompt()" class="w-full btn-emerald text-sm py-3.5 px-6 flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>Generate Customized Prompt</span>
+            </button>
 
-100+ Verified Assets
-All Prompts  Listings  Client Outreach  Negotiation Reel Scripts
-[ Google AdSense / Sponsor Placement ]
+            <!-- CUSTOM PROMPT OUTPUT BOX -->
+            <div class="mt-6 bg-slate-950 border border-slate-800 rounded-xl p-4 relative">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-mono text-emerald-400 font-bold uppercase"><i class="fa-solid fa-code text-[10px] mr-1"></i> Generated Prompt Output</span>
+                    <button onclick="copyOutput()" id="copy-btn" class="btn-slate text-xs flex items-center space-x-1">
+                        <i class="fa-regular fa-copy"></i>
+                        <span id="copy-text">Copy Prompt</span>
+                    </button>
+                </div>
+                <p id="prompt-output" class="text-xs sm:text-sm font-mono text-slate-300 leading-relaxed whitespace-pre-wrap">Act as a senior real estate copywriter. Write a compelling, emotion-driven listing for a Modern Luxury Villa targeting High-Net-Worth Investors. Highlight 'Panoramic Sunset Ocean Views' using sensory details, high-end architectural terminology, and a strong call-to-action for private showings.</p>
+            </div>
+        </section>
 
-High-RPM Real Estate & Financial Services Ad Space
-AI Real Estate Pro © 2026
+        <!-- PROMPT LIBRARY CATEGORY TABS -->
+        <section class="space-y-6">
+            <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold text-white">Full Prompt Library (100% Free)</h3>
+                <span class="text-xs font-mono text-slate-400">100+ Verified Assets</span>
+            </div>
 
-Open-Access Utility for Licensed Real Estate Brokers & Agents.
+            <!-- CATEGORY FILTER BUTTONS -->
+            <div class="flex flex-wrap gap-2">
+                <button onclick="filterCategory('all')" class="cat-btn btn-emerald text-xs">All Prompts</button>
+                <button onclick="filterCategory('listings')" class="cat-btn btn-slate text-xs">Listings</button>
+                <button onclick="filterCategory('outreach')" class="cat-btn btn-slate text-xs">Client Outreach</button>
+                <button onclick="filterCategory('negotiation')" class="cat-btn btn-slate text-xs">Negotiation</button>
+                <button onclick="filterCategory('reels')" class="cat-btn btn-slate text-xs">Reel Scripts</button>
+            </div>
 
-Privacy Policy (GDPR) •  Terms of Use • Sponsor Inquiries
+            <!-- CARDS CONTAINER -->
+            <div id="prompt-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Cards injected dynamically via JS -->
+            </div>
+        </section>
+
+        <!-- BOTTOM ADSENSE / SPONSOR BANNER -->
+        <div class="w-full bg-slate-900 border border-dashed border-slate-800 rounded-xl p-4 text-center">
+            <div id="google-adsense-bottom-banner">
+                <p class="text-xs text-slate-500 font-mono uppercase tracking-widest">[ Google AdSense / Sponsor Placement ]</p>
+                <div class="text-xs text-slate-400 mt-1">High-RPM Real Estate & Financial Services Ad Space</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-slate-900 py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+            <div>
+                <p class="font-semibold text-slate-300">AI Real Estate Pro © 2026</p>
+                <p class="text-[11px] text-slate-500">Open-Access Utility for Licensed Real Estate Brokers & Agents.</p>
+            </div>
+            <div class="flex items-center space-x-4 text-slate-400">
+                <button onclick="openModal('privacy-modal')" class="hover:text-emerald-400 transition cursor-pointer text-xs font-medium bg-transparent border-none text-slate-400">Privacy Policy (GDPR)</button>
+                <span>•</span>
+                <button onclick="openModal('terms-modal')" class="hover:text-emerald-400 transition cursor-pointer text-xs font-medium bg-transparent border-none text-slate-400">Terms of Use</button>
+                <span>•</span>
+                <a href="mailto:airepro@proton.me" class="hover:text-emerald-400 transition">Sponsor Inquiries</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PRIVACY POLICY MODAL -->
+    <div id="privacy-modal" class="modal-overlay">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <h3 class="text-lg font-bold text-white">Privacy Policy & Cookie Disclosures</h3>
+                <button onclick="closeModal('privacy-modal')" class="text-slate-400 hover:text-white text-xl font-bold bg-transparent border-none">&times;</button>
+            </div>
+            <div class="text-xs text-slate-300 space-y-3 leading-relaxed">
+                <p><strong>1. Information We Do Not Collect:</strong> AI Real Estate Pro is an open-access utility. We do not require user registration, passwords, names, or credit card information.</p>
+                <p><strong>2. Google AdSense & Third-Party Advertising:</strong> Third party vendors, including Google, use cookies to serve ads based on a user's prior visits to this or other websites. Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to your sites and/or other sites on the Internet.</p>
+                <p><strong>3. Cookie Opt-Out:</strong> Users may opt out of personalized advertising by visiting <a href="https://www.aboutads.info" target="_blank" class="text-emerald-400 underline">AboutAds.info</a> or adjusting their browser privacy settings.</p>
+                <p><strong>4. Contact & POPIA/GDPR Inquiries:</strong> For privacy inquiries, email <a href="mailto:airepro@proton.me" class="text-emerald-400 underline">airepro@proton.me</a>.</p>
+            </div>
+            <button onclick="closeModal('privacy-modal')" class="w-full btn-emerald text-xs mt-4">Close Privacy Policy</button>
+        </div>
+    </div>
+
+    <!-- TERMS OF USE MODAL -->
+    <div id="terms-modal" class="modal-overlay">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <h3 class="text-lg font-bold text-white">Terms of Use & AI Disclaimer</h3>
+                <button onclick="closeModal('terms-modal')" class="text-slate-400 hover:text-white text-xl font-bold bg-transparent border-none">&times;</button>
+            </div>
+            <div class="text-xs text-slate-300 space-y-3 leading-relaxed">
+                <p><strong>1. Acceptance of Terms:</strong> By accessing and using AI Real Estate Pro, you agree to these Terms of Use.</p>
+                <p><strong>2. AI Output & Compliance Responsibility:</strong> All prompts and generated text templates are provided for educational and productivity purposes only. Users (licensed real estate agents and brokers) retain 100% legal responsibility for reviewing, fact-checking, and verifying all AI-generated copy prior to publishing on MLS, social media, or marketing materials.</p>
+                <p><strong>3. Fair Housing & Local Real Estate Laws:</strong> Users must ensure all published property descriptions comply with Fair Housing Act guidelines, regional real estate advertising standards, and local property misrepresentation laws.</p>
+                <p><strong>4. Limitation of Liability:</strong> AI Real Estate Pro accepts zero liability for factual errors, lost contracts, or regulatory fines resulting from unverified AI output usage.</p>
+            </div>
+            <button onclick="closeModal('terms-modal')" class="w-full btn-emerald text-xs mt-4">Close Terms of Use</button>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        const promptData = [
+            {
+                id: 1,
+                category: "listings",
+                title: "The Architectural Luxury Masterpiece",
+                conversion: "+34% Zillow Click-Through Rate",
+                prompt: "Act as an architectural real estate copywriter. Write a 250-word property listing for [Property Type] located in [Neighborhood]. Emphasize structural volume, natural light orientation, and premium materials. End with an exclusive private showing call-to-action."
+            },
+            {
+                id: 2,
+                category: "outreach",
+                title: "Expired Listing Re-Engagement Email",
+                conversion: "18% Cold Response Rate",
+                prompt: "Write a high-empathy email sequence to a seller whose home expired on MLS after 90 days. Acknowledge frustration, present a fresh 30-day marketing audit strategy, and request a 10-minute coffee meeting without being salesy."
+            },
+            {
+                id: 3,
+                category: "negotiation",
+                title: "Appraisal Gap Bridge Script",
+                conversion: "Closes 82% of Valuation Gaps",
+                prompt: "Act as a senior listing agent. Draft a persuasive response to a buyer's agent after an appraisal comes in $20,000 below contract price. Provide market data justification, highlight local absorption rates, and propose a 50/50 split compromise."
+            },
+            {
+                id: 4,
+                category: "reels",
+                title: "Viral 'Market Myth-Buster' Reel Hook",
+                conversion: "4.2x Organic View Retention",
+                prompt: "Write a 30-second Instagram Reel script busting the myth that 'Interest rates make it impossible to buy in 2026'. Include a strong 3-second opening hook, 3 bullet points on seller concessions, and an on-screen text callout."
+            }
+        ];
+
+        function renderPrompts(items) {
+            const grid = document.getElementById("prompt-grid");
+            grid.innerHTML = items.map(p => `
+                <div class="card-bg space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">${p.category}</span>
+                        <span class="text-[11px] font-semibold text-teal-300"><i class="fa-solid fa-chart-line mr-1"></i>${p.conversion}</span>
+                    </div>
+                    <h4 class="font-bold text-white text-base">${p.title}</h4>
+                    <p class="text-xs font-mono text-slate-300 bg-slate-950 p-3 rounded-lg border border-slate-800/80 leading-relaxed">${p.prompt}</p>
+                    <button onclick="copyText('${p.prompt.replace(/'/g, "\'")}')" class="w-full btn-slate text-xs flex items-center justify-center space-x-1">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>Copy Prompt</span>
+                    </button>
+                </div>
+            `).join("");
+        }
+
+        function generateCustomPrompt() {
+            const type = document.getElementById("prop-type").value;
+            const aud = document.getElementById("target-aud").value;
+            const feat = document.getElementById("prop-feature").value;
+
+            const text = `Act as a senior real estate copywriter. Write a compelling, emotion-driven listing for a ${type} targeting ${aud}. Highlight '${feat}' using sensory details, high-end architectural terminology, and a strong call-to-action for private showings.`;
+            document.getElementById("prompt-output").innerText = text;
+        }
+
+        function copyOutput() {
+            const text = document.getElementById("prompt-output").innerText;
+            navigator.clipboard.writeText(text);
+            const btn = document.getElementById("copy-text");
+            btn.innerText = "Copied!";
+            setTimeout(() => { btn.innerText = "Copy Prompt"; }, 2000);
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text);
+            alert("Prompt copied to clipboard!");
+        }
+
+        function filterCategory(cat) {
+            if (cat === 'all') {
+                renderPrompts(promptData);
+            } else {
+                renderPrompts(promptData.filter(p => p.category === cat));
+            }
+        }
+
+        function openModal(id) {
+            const el = document.getElementById(id);
+            if (el) el.classList.add('active');
+        }
+
+        function closeModal(id) {
+            const el = document.getElementById(id);
+            if (el) el.classList.remove('active');
+        }
+
+        // Initial Load
+        renderPrompts(promptData);
+    </script>
+</body>
+</html>
