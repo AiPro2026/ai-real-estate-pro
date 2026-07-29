@@ -1,321 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Real Estate Pro | Free Agent Marketing Asset Builder</title>
-    <meta name="description" content="A free AI marketing assistant for real estate agents. Build listing copy, social posts, follow-ups, open house invites, and seller scripts in minutes.">
-    <meta property="og:title" content="AI Real Estate Pro | Free Agent Marketing Asset Builder">
-    <meta property="og:description" content="Generate listing, social, email, and open-house marketing assets for $0. No paywalls, no logins.">
-    <meta property="og:type" content="website">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --ivory: #faf7f0;
-            --linen: #f2eadc;
-            --sand: #e7d9bf;
-            --sage: #a8b5a0;
-            --forest: #1f3d2b;
-            --moss: #5f704f;
-            --champagne: #c6a15b;
-            --clay: #b8795b;
-            --espresso: #2a2118;
-            --charcoal: #3a3833;
-        }
-        html { scroll-behavior: smooth; }
-        body {
-            background:
-                radial-gradient(circle at top left, rgba(198, 161, 91, 0.18), transparent 30rem),
-                linear-gradient(135deg, var(--ivory) 0%, #f7efe2 48%, #edf1e7 100%) !important;
-            color: var(--espresso) !important;
-            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
-            margin: 0;
-            padding: 0;
-        }
-        .header-bg { background: rgba(250, 247, 240, 0.92); border-bottom: 1px solid rgba(42, 33, 24, 0.10); backdrop-filter: blur(18px); }
-        .card-bg { background: rgba(255, 252, 246, 0.88); border: 1px solid rgba(42, 33, 24, 0.10); border-radius: 1.5rem; padding: 1.5rem; box-shadow: 0 24px 70px rgba(42, 33, 24, 0.08); }
-        .warm-panel { background: linear-gradient(135deg, rgba(31,61,43,.95), rgba(95,112,79,.92)); color: var(--ivory); }
-        .accent-forest { color: var(--forest); }
-        .accent-gold { color: var(--champagne); }
-        .btn-forest { background: var(--forest); color: var(--ivory); font-weight: 800; border-radius: 999px; padding: 0.85rem 1.45rem; border: 1px solid rgba(31,61,43,.15); cursor: pointer; box-shadow: 0 16px 30px rgba(31, 61, 43, 0.20); transition: transform .18s ease, background .18s ease, box-shadow .18s ease; }
-        .btn-forest:hover { background: #173321; transform: translateY(-1px); box-shadow: 0 18px 38px rgba(31, 61, 43, 0.25); }
-        .btn-sand { background: rgba(255,252,246,.88); color: var(--forest); border-radius: 999px; padding: 0.65rem 1rem; border: 1px solid rgba(31,61,43,.18); cursor: pointer; font-weight: 700; transition: background .18s ease, transform .18s ease; }
-        .btn-sand:hover { background: var(--linen); transform: translateY(-1px); }
-        .field { width: 100%; background: rgba(255,252,246,.9); border: 1px solid rgba(42,33,24,.16); border-radius: 1rem; padding: .8rem .9rem; color: var(--espresso); font-size: .875rem; outline: none; }
-        .field:focus { border-color: var(--forest); box-shadow: 0 0 0 4px rgba(31,61,43,.10); }
-        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(42, 33, 24, 0.62); backdrop-filter: blur(8px); z-index: 9999; align-items: center; justify-content: center; padding: 1rem; }
-        .modal-overlay.active { display: flex !important; }
-        .toast { position: fixed; left: 50%; bottom: 1.25rem; transform: translateX(-50%) translateY(1rem); opacity: 0; pointer-events: none; background: var(--forest); color: var(--ivory); border-radius: 999px; padding: .8rem 1rem; font-size: .8rem; font-weight: 800; box-shadow: 0 18px 50px rgba(42,33,24,.22); transition: opacity .2s, transform .2s; z-index: 10000; }
-        .toast.active { opacity: 1; transform: translateX(-50%) translateY(0); }
-    </style>
+<script src="https://5gvci.com/act/files/tag.min.js?z=11444443" data-cfasync="false" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>5 CLUES — Case File Detective Engine</title>
+<meta name="monetag" content="bfcd1488c4d5ddecd23ac595546e9803">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&family=Cinzel:wght@700;900&family=Orbitron:wght@700;900&family=Bangers&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-grad-start: #0B0E14;
+    --bg-main: #0B0E14;
+    --card-bg: #151922;
+    --card-border: #232B3E;
+    --text-main: #F1F5F9;
+    --text-muted: #94A3B8;
+    --primary-accent: #F59E0B;
+    --secondary-accent: #06B6D4;
+    --slot-bg: #1E293B;
+    --theme-font: 'Plus Jakarta Sans', sans-serif;
+    --theme-header-font: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease; }
+  
+  body {
+    min-height: 100vh;
+    background: radial-gradient(circle at 50% 0%, var(--bg-grad-start) 0%, var(--bg-main) 80%);
+    font-family: var(--theme-font);
+    color: var(--text-main);
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+    padding: 16px; overflow-x: hidden;
+  }
+
+  .app { width: 100%; max-width: 440px; display: flex; flex-direction: column; gap: 14px; }
+
+  /* Top Bar */
+  .header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 16px; background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+  .brand { font-family: var(--theme-header-font); font-size: 20px; font-weight: 800; color: var(--primary-accent); letter-spacing: -0.5px; }
+  .stats-row { display: flex; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; }
+  .badge { background: rgba(255,255,255,0.05); color: var(--primary-accent); border: 1px solid var(--card-border); padding: 4px 8px; border-radius: 6px; }
+
+  /* Main Card */
+  .case-card {
+    position: relative; background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 16px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: flex; flex-direction: column; gap: 16px; overflow: hidden;
+  }
+
+  .meta-bar { display: flex; justify-content: space-between; align-items: center; font-family: var(--theme-header-font); font-size: 11px; color: var(--text-muted); }
+  .meta-tag { background: rgba(255,255,255,0.06); color: var(--secondary-accent); border: 1px solid var(--card-border); padding: 4px 10px; border-radius: 6px; text-transform: uppercase; font-weight: 800; letter-spacing: 0.5px; }
+
+  /* Clue Display */
+  .clue-box {
+    background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px;
+    min-height: 95px; display: flex; flex-direction: column; justify-content: center; position: relative;
+  }
+  .clue-num { font-family: var(--theme-header-font); font-size: 11px; color: var(--primary-accent); text-transform: uppercase; margin-bottom: 6px; font-weight: 800; }
+  .clue-text { font-size: 15px; line-height: 1.45; font-weight: 500; color: var(--text-main); }
+
+  /* Word Mask Display */
+  .word-slots { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin: 6px 0; }
+  .slot {
+    width: 32px; height: 40px; background: var(--slot-bg); border: 2px solid var(--card-border);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    font-family: var(--theme-header-font); font-size: 18px; font-weight: 800; color: var(--primary-accent);
+    text-transform: uppercase;
+  }
+  .slot.filled { border-color: var(--primary-accent); background: rgba(255,255,255,0.05); box-shadow: 0 0 10px rgba(255,255,255,0.1); }
+
+  /* Action Buttons */
+  .input-group { display: flex; gap: 8px; }
+  .guess-input {
+    flex: 1; background: rgba(0,0,0,0.4); border: 2px solid var(--card-border); border-radius: 10px;
+    padding: 12px 14px; font-size: 16px; color: var(--text-main); font-weight: 600; outline: none;
+    font-family: var(--theme-font);
+  }
+  .guess-input:focus { border-color: var(--secondary-accent); }
+  .btn {
+    background: var(--primary-accent); color: #000; font-weight: 800; font-size: 14px;
+    border: none; border-radius: 10px; padding: 0 18px; cursor: pointer; transition: transform 0.1s;
+    display: flex; align-items: center; justify-content: center; font-family: var(--theme-header-font);
+  }
+  .btn:active { transform: scale(0.96); }
+  .btn-ad {
+    background: var(--card-bg); color: var(--secondary-accent); border: 1px solid var(--card-border);
+    width: 100%; padding: 12px; font-size: 12px; font-family: var(--theme-header-font); gap: 8px; border-radius: 10px; font-weight: 700;
+    cursor: pointer; text-decoration: none; text-align: center; display: inline-block;
+  }
+
+  /* History list */
+  .history-list { display: flex; flex-direction: column; gap: 6px; }
+  .history-item { font-size: 12px; padding: 8px 10px; background: rgba(255,255,255,0.02); border-left: 3px solid var(--primary-accent); border-radius: 4px; color: var(--text-muted); }
+
+  /* Stamp overlay */
+  .stamp {
+    position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%) scale(0) rotate(-10deg);
+    font-family: var(--theme-header-font); font-size: 32px; font-weight: 800; padding: 10px 24px;
+    border: 4px solid currentColor; border-radius: 12px; pointer-events: none; opacity: 0; z-index: 10;
+  }
+  .stamp.show { animation: stampPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+  .stamp.wrong { color: #EF4444; background: rgba(15, 23, 42, 0.95); }
+  .stamp.solved { color: var(--primary-accent); background: rgba(15, 23, 42, 0.95); }
+
+  @keyframes stampPop { 0% { opacity: 0; transform: translate(-50%, -50%) scale(2) rotate(-10deg); } 100% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(-10deg); } }
+
+  /* Results Screen */
+  .results { display: none; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+  .results.active { display: flex; }
+  .res-title { font-size: 24px; font-weight: 800; color: var(--primary-accent); font-family: var(--theme-header-font); }
+  .res-grid { font-size: 24px; letter-spacing: 4px; background: rgba(0,0,0,0.3); padding: 12px 20px; border-radius: 10px; border: 1px solid var(--card-border); }
+</style>
 </head>
-<body class="min-h-screen flex flex-col antialiased">
-    <div class="warm-panel text-center px-4 py-2 text-[0.72rem] font-black uppercase tracking-[0.18em]">
-        <i class="fa-solid fa-house-chimney-window mr-1"></i> Free for agents • Sponsor-supported • Built for daily listing wins
+<body>
+
+<div class="app">
+  <div class="header">
+    <div class="brand">5 CLUES</div>
+    <div class="stats-row">
+      <div class="badge" id="streakBadge">🔥 1 STREAK</div>
+      <div class="badge" id="scoreBadge">⭐ 0 PTS</div>
+    </div>
+  </div>
+
+  <div class="case-card">
+    <div class="stamp" id="stamp">WRONG</div>
+
+    <div class="meta-bar">
+      <span class="meta-tag" id="categoryTag">GENERATING...</span>
+      <span id="caseNo">CASE #1001</span>
     </div>
 
-    <header class="header-bg sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
-            <div class="flex items-center space-x-3">
-                <div class="w-11 h-11 rounded-2xl flex items-center justify-center font-black text-xl text-white" style="background: linear-gradient(135deg, var(--forest), var(--moss)); box-shadow: 0 12px 30px rgba(31,61,43,.2);">AI</div>
-                <div>
-                    <h1 class="font-black text-lg tracking-tight leading-none" style="color: var(--espresso);">AI REAL ESTATE PRO</h1>
-                    <p class="text-xs font-bold tracking-wide" style="color: var(--moss);">Free Agent Marketing Assistant</p>
-                </div>
-            </div>
-            <div class="flex items-center space-x-3">
-                <a href="https://airepro.gumroad.com/l/RealEstateMK" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center space-x-2 btn-sand text-xs">
-                    <i class="fa-solid fa-gift accent-gold"></i><span>Get Free Agent Toolkit</span>
-                </a>
-                <a href="#interactive-builder" class="btn-forest text-xs">Build My Asset</a>
-            </div>
-        </div>
-    </header>
+    <div id="playArea" style="display:flex; flex-direction:column; gap:14px;">
+      <div class="clue-box">
+        <div class="clue-num" id="clueNum">CLUE 1 OF 5 (100 PTS)</div>
+        <div class="clue-text" id="clueText">Synthesizing case file details...</div>
+      </div>
 
-    <main class="flex-grow max-w-6xl mx-auto px-4 py-8 space-y-8">
-        <section class="text-center space-y-5 max-w-4xl mx-auto pt-5">
-            <span class="inline-flex items-center px-4 py-2 rounded-full text-xs font-black border" style="background: rgba(198,161,91,.14); color: var(--forest); border-color: rgba(198,161,91,.35);">
-                <i class="fa-solid fa-circle text-[8px] mr-2 animate-pulse accent-gold"></i> v4.0 Agent Marketing Cockpit
-            </span>
-            <h2 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.02]" style="color: var(--espresso);">
-                Your free AI assistant for <span style="color: var(--forest);">listings, leads, follow-ups & social content</span>.
-            </h2>
-            <p class="text-base sm:text-lg leading-relaxed max-w-3xl mx-auto" style="color: var(--charcoal);">
-                Create ready-to-use real estate marketing assets in minutes: MLS copy, Instagram captions, seller emails, open-house invitations, video scripts, and launch bundles — with no login, no paywall, and no credit card.
-            </p>
-            <div class="flex flex-wrap justify-center gap-3 text-xs font-black" style="color: var(--forest);">
-                <span class="btn-sand"><i class="fa-solid fa-lock-open mr-1"></i>No login required</span>
-                <span class="btn-sand"><i class="fa-solid fa-scale-balanced mr-1"></i>Compliance-aware prompts</span>
-                <span class="btn-sand"><i class="fa-solid fa-calendar-check mr-1"></i>Built for daily agent workflows</span>
-            </div>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-                <a href="#interactive-builder" class="btn-forest text-sm"><i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Build My Marketing Asset</a>
-                <a href="https://airepro.gumroad.com/l/RealEstateMK" target="_blank" rel="noopener" class="btn-sand text-sm"><i class="fa-solid fa-download mr-2 accent-gold"></i>Download Free Agent Toolkit</a>
-            </div>
-        </section>
+      <div class="word-slots" id="wordSlots"></div>
 
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-4" id="daily-playbook">
-            <div class="card-bg space-y-3">
-                <p class="text-[11px] font-black uppercase tracking-[.16em] accent-gold">Today’s Agent Playbook</p>
-                <h3 class="text-xl font-black" style="color: var(--espresso);">Daily content that keeps you visible.</h3>
-                <p class="text-sm" style="color: var(--charcoal);">Pick a quick workflow and we’ll prefill the builder with a practical marketing angle.</p>
-            </div>
-            <button class="card-bg text-left playbook-btn" data-asset="Instagram Caption" data-feature="A fresh neighborhood market insight buyers should know this week">
-                <i class="fa-brands fa-instagram accent-gold text-xl"></i>
-                <h4 class="font-black mt-2">Today’s Social Post</h4>
-                <p class="text-xs mt-1" style="color: var(--charcoal);">Create an educational post your sphere can save and share.</p>
-            </button>
-            <button class="card-bg text-left playbook-btn" data-asset="Open House Invite" data-feature="A warm weekend open house with lender-friendly buyer tips">
-                <i class="fa-solid fa-door-open accent-gold text-xl"></i>
-                <h4 class="font-black mt-2">Weekend Open House Push</h4>
-                <p class="text-xs mt-1" style="color: var(--charcoal);">Build a polished invite for email, text, and social.</p>
-            </button>
-        </section>
+      <div class="input-group">
+        <input type="text" class="guess-input" id="guessInput" placeholder="Type answer..." autocomplete="off">
+        <button class="btn" id="guessBtn">GUESS</button>
+      </div>
 
-        <section class="card-bg grid grid-cols-1 lg:grid-cols-[1.15fr_.85fr] gap-6 items-center">
-            <div>
-                <p class="text-[11px] font-black uppercase tracking-[.16em] accent-gold">Free weekly resource</p>
-                <h3 class="text-2xl font-black mt-1" style="color: var(--espresso);">Get the 7-day listing marketing plan.</h3>
-                <p class="text-sm mt-2" style="color: var(--charcoal);">Optional signup. The generator stays free. Use your email only if you want weekly scripts, listing ideas, and sponsor-supported agent resources.</p>
-            </div>
-            <form class="flex flex-col sm:flex-row gap-2" onsubmit="handleSignup(event)">
-                <input class="field" type="email" required placeholder="agent@email.com" aria-label="Email address">
-                <button class="btn-forest whitespace-nowrap" type="submit">Send Me the Plan</button>
-            </form>
-        </section>
+      <button class="btn btn-ad" id="adBtn">
+        💡 WATCH AD / GET EXTRA HINT (+LETTER)
+      </button>
 
-        <section id="interactive-builder" class="card-bg">
-            <div class="flex items-center space-x-3 mb-6">
-                <div class="w-9 h-9 rounded-2xl flex items-center justify-center font-black text-white" style="background: var(--forest);">1</div>
-                <div>
-                    <h3 class="text-2xl font-black" style="color: var(--espresso);">Agent Marketing Asset Builder</h3>
-                    <p class="text-xs font-semibold" style="color: var(--charcoal);">Generate copy-ready assets, bundles, and prompts for your next client touchpoint.</p>
-                </div>
-            </div>
+      <div class="history-list" id="historyList"></div>
+    </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-                <div>
-                    <label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">Asset Type</label>
-                    <select id="asset-type" class="field">
-                        <option>Listing Description</option><option>Instagram Caption</option><option>Reel Script</option><option>Open House Invite</option><option>Seller Follow-Up Email</option><option>Buyer Consultation Script</option><option>Price Reduction Announcement</option><option>Just Sold Post</option><option>Farming Postcard Copy</option><option>Listing Launch Bundle</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">Property Type</label>
-                    <select id="prop-type" class="field"><option>Modern Luxury Villa</option><option>Suburban Family Residence</option><option>Fixer-Upper Opportunity</option><option>Urban High-Rise Condo</option><option>Townhome</option><option>Lakefront Retreat</option></select>
-                </div>
-                <div>
-                    <label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">Target Audience</label>
-                    <select id="target-aud" class="field"><option>High-Net-Worth Investors</option><option>First-Time Homebuyers</option><option>Relocating Executives</option><option>Savvy Value-Add Investors</option><option>Move-Up Families</option><option>Downsizing Sellers</option></select>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                <div><label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">City / Neighborhood</label><input type="text" id="neighborhood" value="Coastal Heights" class="field" placeholder="e.g. Westlake Village"></div>
-                <div><label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">Price / Bed-Bath</label><input type="text" id="property-stats" value="$1.2M • 4 bed • 3 bath" class="field" placeholder="e.g. $750K • 3 bed • 2 bath"></div>
-                <div><label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">Key Feature / CTA</label><input type="text" id="prop-feature" value="Panoramic sunset ocean views; book a private showing" class="field" placeholder="e.g. Designer kitchen; DM for tour"></div>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                <div><label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">Tone</label><select id="tone" class="field"><option>Warm Luxury</option><option>Friendly Educational</option><option>Polished Professional</option><option>Urgent but Calm</option><option>Investor-Focused</option></select></div>
-                <div><label class="block text-xs font-black uppercase tracking-wider mb-2" style="color: var(--forest);">Agent Goal</label><input type="text" id="agent-goal" value="Win more qualified showing requests" class="field" placeholder="e.g. Re-engage cold seller leads"></div>
-            </div>
+    <div class="results" id="results">
+      <div class="res-title" id="resTitle">CASE SOLVED!</div>
+      <p style="color:var(--text-muted); font-size:14px;" id="resSub">You scored 80 points.</p>
+      <div class="res-grid" id="resGrid">🟩⬜⬜⬜⬜</div>
+      <button class="btn" id="shareBtn" style="width:100%; padding:14px;">📋 SHARE CASE RESULT</button>
+      <button class="btn" id="nextCaseBtn" style="width:100%; padding:14px; background:var(--secondary-accent); color:#000;">⚡ NEXT CASE FILE</button>
+    </div>
+  </div>
+</div>
 
-            <button onclick="generateCustomPrompt()" class="w-full btn-forest text-sm py-4 px-6 flex items-center justify-center space-x-2"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Generate Marketing Asset Prompt</span></button>
+<script>
+// Web Audio Synth
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+function playSound(type) {
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  osc.connect(gain); gain.connect(audioCtx.destination);
+  
+  if (type === 'correct') {
+    osc.frequency.setValueAtTime(523.25, audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(659.25, audioCtx.currentTime + 0.1);
+    gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+    osc.start(); osc.stop(audioCtx.currentTime + 0.3);
+  } else if (type === 'wrong') {
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(80, audioCtx.currentTime + 0.2);
+    gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
+    osc.start(); osc.stop(audioCtx.currentTime + 0.25);
+  }
+}
 
-            <div class="mt-6 border rounded-2xl p-4 relative" style="background: rgba(31,61,43,.045); border-color: rgba(31,61,43,.14);">
-                <div class="flex items-center justify-between gap-3 mb-3">
-                    <span class="text-xs font-black uppercase tracking-wider" style="color: var(--forest);"><i class="fa-solid fa-file-lines text-[10px] mr-1"></i> Generated Output</span>
-                    <button onclick="copyOutput()" id="copy-btn" class="btn-sand text-xs flex items-center space-x-1"><i class="fa-regular fa-copy"></i><span id="copy-text">Copy Prompt</span></button>
-                </div>
-                <p id="prompt-output" class="text-sm font-mono leading-relaxed whitespace-pre-wrap" style="color: var(--espresso);">Act as a senior real estate marketing strategist. Create a warm luxury Listing Description for a Modern Luxury Villa in Coastal Heights targeting High-Net-Worth Investors. Include these details: $1.2M • 4 bed • 3 bath. Highlight: Panoramic sunset ocean views; book a private showing. Goal: Win more qualified showing requests. Avoid Fair Housing violations, protected-class references, steering language, exaggerated claims, and unverifiable facts. Use only provided details and mark missing facts as placeholders.</p>
-                <p class="text-[11px] mt-3" style="color: var(--charcoal);"><i class="fa-solid fa-scale-balanced mr-1 accent-gold"></i> Compliance reminder: verify property facts, local advertising rules, MLS requirements, and Fair Housing language before publishing.</p>
-            </div>
+// Procedural Theme Styling Engine
+function generateThemeCSS(category) {
+  let hash = 0;
+  for (let i = 0; i < category.length; i++) hash = category.charCodeAt(i) + ((hash << 5) - hash);
+  const hue1 = Math.abs(hash) % 360;
+  const hue2 = (hue1 + 140) % 360;
+  const fonts = ['Plus Jakarta Sans', 'Orbitron', 'Cinzel', 'Bangers', 'JetBrains Mono'];
+  const fontChoice = fonts[Math.abs(hash) % fonts.length];
 
-            <aside id="resource-panel" class="mt-5 rounded-2xl p-4 border" style="background: linear-gradient(135deg, rgba(198,161,91,.16), rgba(168,181,160,.16)); border-color: rgba(198,161,91,.28);">
-                <p class="text-[11px] font-black uppercase tracking-[.16em] accent-gold">Recommended Agent Resource</p>
-                <h4 id="resource-title" class="font-black mt-1" style="color: var(--espresso);">Listing marketing partners</h4>
-                <p id="resource-copy" class="text-sm mt-1" style="color: var(--charcoal);">Pair your new copy with listing photography, virtual staging, print flyers, or a single-property website.</p>
-                <a id="resource-link" href="mailto:airehq@proton.me?subject=Sponsor%20AI%20Real%20Estate%20Pro" class="inline-flex mt-3 btn-sand text-xs" target="_blank" rel="noopener sponsored">Sponsor this workflow</a>
-            </aside>
-        </section>
+  return {
+    bgStart: `hsl(${hue1}, 70%, 12%)`,
+    bgMain: `hsl(${hue1}, 80%, 4%)`,
+    cardBg: `hsl(${hue1}, 50%, 8%)`,
+    cardBorder: `hsl(${hue1}, 40%, 18%)`,
+    primaryAccent: `hsl(${hue1}, 90%, 55%)`,
+    secondaryAccent: `hsl(${hue2}, 90%, 60%)`,
+    slotBg: `hsl(${hue1}, 40%, 14%)`,
+    font: fontChoice
+  };
+}
 
-        <section class="space-y-6">
-            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
-                <div>
-                    <h3 class="text-2xl font-black" style="color: var(--espresso);">Starter Prompt Library</h3>
-                    <p class="text-sm" style="color: var(--charcoal);">A practical starter set. Download the free toolkit for the expanded agent library.</p>
-                </div>
-                <span class="text-xs font-black accent-gold">Free toolkit available</span>
-            </div>
-            <div class="flex flex-wrap gap-2">
-                <button data-cat="all" class="cat-btn btn-forest text-xs">All Prompts</button>
-                <button data-cat="listings" class="cat-btn btn-sand text-xs">Listings</button>
-                <button data-cat="outreach" class="cat-btn btn-sand text-xs">Client Outreach</button>
-                <button data-cat="negotiation" class="cat-btn btn-sand text-xs">Negotiation</button>
-                <button data-cat="reels" class="cat-btn btn-sand text-xs">Reel Scripts</button>
-            </div>
-            <div id="sponsor-card"></div>
-            <div id="prompt-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-        </section>
+function applyProceduralTheme(category) {
+  const t = generateThemeCSS(category);
+  const root = document.documentElement;
+  root.style.setProperty('--bg-grad-start', t.bgStart);
+  root.style.setProperty('--bg-main', t.bgMain);
+  root.style.setProperty('--card-bg', t.cardBg);
+  root.style.setProperty('--card-border', t.cardBorder);
+  root.style.setProperty('--primary-accent', t.primaryAccent);
+  root.style.setProperty('--secondary-accent', t.secondaryAccent);
+  root.style.setProperty('--slot-bg', t.slotBg);
+  root.style.setProperty('--theme-font', `'${t.font}', sans-serif`);
+  root.style.setProperty('--theme-header-font', `'${t.font}', sans-serif`);
+}
 
-        <div class="card-bg text-center">
-            <p class="text-[11px] font-black uppercase tracking-[.16em] accent-gold">Sponsor-supported and free for agents</p>
-            <h3 class="text-xl font-black mt-1" style="color: var(--espresso);">Want your real estate service in front of active agents?</h3>
-            <p class="text-sm mt-1" style="color: var(--charcoal);">Sponsor a category, daily playbook, or high-intent workflow without interrupting the free user experience.</p>
-            <a href="mailto:airehq@proton.me?subject=Sponsor%20AI%20Real%20Estate%20Pro" class="inline-flex mt-4 btn-forest text-sm">Sponsor This Tool</a>
-        </div>
-    </main>
+const SUBJECTS = [
+  { name: "SCIENCE", target: "PENICILLIN", clues: ["I was discovered by accident in an uncovered petri dish.", "I belong to a family of mold-derived antibiotic compounds.", "Mass-produced during World War II to save millions of lives.", "Alexander Fleming discovered me in 1928.", "I am the world's first true antibiotic miracle drug."] },
+  { name: "ASTRONOMY", target: "SUPERNOVA", clues: ["I am a monumental stellar explosion.", "I briefly outshine entire galaxies in brightness.", "I leave behind neutron stars or black holes.", "My shockwaves synthesize heavy elements like gold.", "The cataclysmic death of a massive star."] },
+  { name: "GAMING", target: "MINECRAFT", clues: ["I was created by Markus 'Notch' Persson in 2009.", "I feature pixelated 3D blocky landscapes.", "Players battle Creepers, Endermen, and the Ender Dragon.", "I am the best-selling video game of all time.", "The iconic sandbox game of survival and building."] },
+  { name: "GEOGRAPHY", target: "AMAZON", clues: ["I flow through nine South American countries.", "I hold more water volume than the next 7 largest rivers combined.", "I run through the world's largest tropical rainforest.", "Home to pink river dolphins and piranhas.", "The largest river by discharge volume in the world."] },
+  { name: "ANIMATION", target: "PIXAR", clues: ["I pioneered the world's first computer-animated feature film in 1995.", "My mascot is a jumping desk lamp named Luxo Jr.", "Creator of Toy Story, Finding Nemo, and The Incredibles.", "Acquired by Disney in 2006.", "The famous animation studio based in Emeryville."] },
+  { name: "TECHNOLOGY", target: "BITCOIN", clues: ["I was created in 2009 by a mysterious entity named Satoshi.", "I operate on a decentralized public ledger called a blockchain.", "My total supply is capped forever at 21 million units.", "People perform 'mining' with hardware to earn me.", "I am the world's first and largest cryptocurrency."] },
+  { name: "HISTORY", target: "CLEOPATRA", clues: ["I was the last active ruler of the Ptolemaic Kingdom of Egypt.", "Famous for my strategic political alliances with Julius Caesar.", "I spoke multiple languages, including Egyptian and Greek.", "My life ended tragically in 30 BC via an asp bite legend.", "One of history's most iconic Egyptian queens."] },
+  { name: "POP CULTURE", target: "AVATAR", clues: ["Released in 2009, I revolutionized 3D cinematic technology.", "Set on the lush alien moon world of Pandora.", "Features the Na'vi species and blue-skinned avatars.", "Directed by James Cameron and became highest-grossing film.", "A blockbuster movie saga about Pandora."] },
+  { name: "PHYSICS", target: "GRAVITY", clues: ["I am one of the four fundamental forces of nature.", "Isaac Newton formulated my mathematical laws under an apple tree.", "Albert Einstein described me as the curvature of spacetime.", "I keep the planets orbiting around the sun.", "The force that attracts objects toward the Earth's center."] },
+  { name: "LITERATURE", target: "SHAKESPEARE", clues: ["I wrote 38 plays and 154 sonnets in my lifetime.", "Born in Stratford-upon-Avon, England in 1564.", "Creator of Hamlet, Romeo & Juliet, and Macbeth.", "Often called the Bard of Avon.", "History's most famous English playwright and poet."] }
+];
 
-    <footer class="border-t py-8 mt-12" style="background: rgba(255,252,246,.65); border-color: rgba(42,33,24,.10);">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between text-xs gap-4" style="color: var(--charcoal);">
-            <div><p class="font-black" style="color: var(--espresso);">AI Real Estate Pro © 2026</p><p>Free, sponsor-supported utility for licensed real estate brokers & agents.</p></div>
-            <div class="flex items-center space-x-4"><button onclick="openModal('privacy-modal')" class="hover:underline bg-transparent border-none cursor-pointer">Privacy Policy</button><span>•</span><button onclick="openModal('terms-modal')" class="hover:underline bg-transparent border-none cursor-pointer">Terms of Use</button><span>•</span><a href="mailto:airehq@proton.me" class="hover:underline">Sponsor Inquiries</a></div>
-        </div>
-    </footer>
+let remainingIndices = [];
+let caseCount = 1000;
+let currentCase = null;
+let clueIdx = 0;
+let revealedLetters = [];
+let history = [];
+let score = 0;
+let streak = 1;
 
-    <div id="privacy-modal" class="modal-overlay"><div class="card-bg max-w-2xl w-full max-h-[85vh] overflow-y-auto space-y-4"><div class="flex items-center justify-between border-b pb-3"><h3 class="text-lg font-black">Privacy Policy & Cookie Disclosures</h3><button onclick="closeModal('privacy-modal')" class="text-2xl bg-transparent border-none cursor-pointer">&times;</button></div><div class="text-sm space-y-3 leading-relaxed"><p><strong>1. Information We Do Not Collect:</strong> AI Real Estate Pro does not require user registration, passwords, names, or credit card information to use the generator.</p><p><strong>2. Optional Email:</strong> If you request a toolkit or weekly plan, your email may be used to send agent resources and sponsor-supported updates.</p><p><strong>3. Advertising & Sponsor Links:</strong> Third-party sponsors or advertising partners may use cookies or tracking on their own sites after you click their links.</p><p><strong>4. Contact:</strong> For privacy inquiries, email <a href="mailto:airepro@proton.me" class="underline">airepro@proton.me</a>.</p></div><button onclick="closeModal('privacy-modal')" class="w-full btn-forest text-xs mt-4">Close Privacy Policy</button></div></div>
-    <div id="terms-modal" class="modal-overlay"><div class="card-bg max-w-2xl w-full max-h-[85vh] overflow-y-auto space-y-4"><div class="flex items-center justify-between border-b pb-3"><h3 class="text-lg font-black">Terms of Use & AI Disclaimer</h3><button onclick="closeModal('terms-modal')" class="text-2xl bg-transparent border-none cursor-pointer">&times;</button></div><div class="text-sm space-y-3 leading-relaxed"><p><strong>1. Acceptance of Terms:</strong> By accessing and using AI Real Estate Pro, you agree to these Terms of Use.</p><p><strong>2. AI Output & Compliance Responsibility:</strong> Prompts and generated text templates are productivity tools only. Users retain legal responsibility for reviewing and verifying all outputs before publishing.</p><p><strong>3. Fair Housing & Local Real Estate Laws:</strong> Users must ensure published property descriptions comply with Fair Housing guidelines, local advertising standards, MLS rules, and property misrepresentation laws.</p><p><strong>4. Limitation of Liability:</strong> AI Real Estate Pro accepts no liability for factual errors, lost contracts, or regulatory outcomes from unverified AI-assisted content.</p></div><button onclick="closeModal('terms-modal')" class="w-full btn-forest text-xs mt-4">Close Terms of Use</button></div></div>
-    <div id="toast" class="toast">Copied to clipboard</div>
+function getNextRandomIndex() {
+  if (remainingIndices.length === 0) {
+    remainingIndices = Array.from({length: SUBJECTS.length}, (_, i) => i);
+    for (let i = remainingIndices.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [remainingIndices[i], remainingIndices[j]] = [remainingIndices[j], remainingIndices[i]];
+    }
+  }
+  return remainingIndices.pop();
+}
 
-    <script>
-        const compliance = "Avoid Fair Housing violations, protected-class references, steering language, exaggerated claims, and unverifiable facts. Use only provided details and mark missing facts as placeholders.";
-        const promptData = [
-            { id: 1, category: "listings", title: "The Architectural Luxury Listing", conversion: "Optimized for premium listing appeal", prompt: `Act as an architectural real estate copywriter. Write a 250-word property listing for [Property Type] located in [Neighborhood]. Emphasize natural light, layout flow, premium materials, and lifestyle benefits. End with a private showing call-to-action. ${compliance}` },
-            { id: 2, category: "outreach", title: "Expired Listing Re-Engagement Email", conversion: "Built for expired-listing outreach", prompt: `Write a high-empathy email sequence to a seller whose home expired on MLS after 90 days. Acknowledge frustration, present a fresh 30-day marketing audit strategy, and request a 10-minute coffee meeting without pressure. ${compliance}` },
-            { id: 3, category: "negotiation", title: "Appraisal Gap Bridge Script", conversion: "Useful for appraisal-gap conversations", prompt: `Act as a senior listing agent. Draft a calm response to a buyer's agent after an appraisal comes in below contract price. Ask for supporting data, reference local comparable sales placeholders, and propose practical paths forward. ${compliance}` },
-            { id: 4, category: "reels", title: "Market Myth-Buster Reel Hook", conversion: "Structured for short-form retention", prompt: `Write a 30-second Instagram Reel script busting a common local market myth. Include a 3-second hook, 3 educational points, on-screen text, and a soft CTA to book a buyer or seller consult. ${compliance}` },
-            { id: 5, category: "listings", title: "Open House Weekend Invite", conversion: "Designed for warm event attendance", prompt: `Create an open house invitation for [Address/Neighborhood]. Include date/time placeholders, 3 property highlights, parking/access notes, and a friendly CTA to RSVP or stop by. ${compliance}` },
-            { id: 6, category: "outreach", title: "Sphere Check-In Text", conversion: "Built for relationship nurturing", prompt: `Write 3 short, warm text messages to check in with past clients and sphere contacts without sounding salesy. Include one helpful market insight placeholder and one soft referral ask. ${compliance}` }
-        ];
-        const sponsorData = {
-            all: { title: "Sponsor this agent resource hub", copy: "Reach agents while they are actively creating listing, client, and social marketing assets.", cta: "Sponsor this hub" },
-            listings: { title: "Listing Marketing Partner Slot", copy: "Ideal for photographers, virtual staging studios, listing websites, sign vendors, and print/mail partners.", cta: "Sponsor listings" },
-            outreach: { title: "CRM & Follow-Up Partner Slot", copy: "Ideal for CRMs, email automation tools, ISA services, and lead nurture platforms.", cta: "Sponsor outreach" },
-            negotiation: { title: "Transaction Partner Slot", copy: "Ideal for lenders, title partners, transaction coordinators, and market data tools.", cta: "Sponsor negotiation" },
-            reels: { title: "Social Content Partner Slot", copy: "Ideal for schedulers, video editing tools, content teams, and social media coaches.", cta: "Sponsor reels" }
-        };
-        const resourceMap = {
-            "Listing Description": ["Listing marketing partners", "Pair your new copy with listing photography, virtual staging, print flyers, or a single-property website."],
-            "Instagram Caption": ["Social scheduling tools", "Turn this caption into a weekly content plan with a scheduler or video editing workflow."],
-            "Reel Script": ["Video editing partner", "Use a short-form editing or teleprompter tool to publish faster and stay consistent."],
-            "Open House Invite": ["Open house resource partner", "Add signs, lender co-branded flyers, QR lead capture, and postcard reminders."],
-            "Seller Follow-Up Email": ["CRM automation partner", "Automate follow-ups, reminders, and seller nurture campaigns in your CRM."],
-            "Buyer Consultation Script": ["Mortgage partner resource", "Pair buyer education scripts with lender pre-approval and affordability resources."],
-            "Price Reduction Announcement": ["Seller update toolkit", "Create compliant pricing visuals, email alerts, and social graphics for your adjustment."],
-            "Just Sold Post": ["Review and referral partner", "Convert sold stories into reviews, referrals, and neighborhood proof points."],
-            "Farming Postcard Copy": ["Print and mail partner", "Send your neighborhood copy as postcards, door hangers, or local market mailers."],
-            "Listing Launch Bundle": ["Full launch partner stack", "Combine photography, staging, flyers, social scheduling, and single-property pages for a polished launch."]
-        };
+function loadNextInfiniteCase() {
+  caseCount++;
+  const subjectIdx = getNextRandomIndex();
+  currentCase = SUBJECTS[subjectIdx];
+  clueIdx = 0;
+  history = [];
+  revealedLetters = Array(currentCase.target.length).fill(false);
+  revealedLetters[0] = true;
 
-        function renderPrompts(items, cat = 'all') {
-            const grid = document.getElementById("prompt-grid");
-            grid.innerHTML = items.map(p => `
-                <article class="card-bg space-y-3">
-                    <div class="flex items-center justify-between gap-3">
-                        <span class="text-[10px] font-black uppercase px-2 py-1 rounded-full" style="background: rgba(31,61,43,.09); color: var(--forest);">${p.category}</span>
-                        <span class="text-[11px] font-bold accent-gold"><i class="fa-solid fa-chart-line mr-1"></i>${p.conversion}</span>
-                    </div>
-                    <h4 class="font-black text-base" style="color: var(--espresso);">${p.title}</h4>
-                    <p class="text-xs font-mono p-3 rounded-xl border leading-relaxed" style="background: rgba(31,61,43,.045); border-color: rgba(31,61,43,.12); color: var(--charcoal);">${p.prompt}</p>
-                    <button data-prompt-id="${p.id}" class="copy-prompt-btn w-full btn-sand text-xs flex items-center justify-center space-x-1"><i class="fa-regular fa-copy"></i><span>Copy Prompt</span></button>
-                </article>`).join("");
-            renderSponsor(cat);
-            bindCopyButtons();
-        }
-        function renderSponsor(cat) {
-            const s = sponsorData[cat] || sponsorData.all;
-            document.getElementById('sponsor-card').innerHTML = `<div class="rounded-2xl p-4 border" style="background: rgba(255,252,246,.72); border-color: rgba(198,161,91,.30);"><p class="text-[10px] font-black uppercase tracking-[.16em] accent-gold">Sponsored agent resource</p><div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mt-1"><div><h4 class="font-black" style="color: var(--espresso);">${s.title}</h4><p class="text-sm" style="color: var(--charcoal);">${s.copy}</p></div><a class="btn-sand text-xs whitespace-nowrap" href="mailto:airehq@proton.me?subject=${encodeURIComponent(s.cta)}" rel="noopener sponsored">${s.cta}</a></div></div>`;
-        }
-        function buildBundle(type, aud, feat, n, stats, tone, goal) {
-            return `Act as a senior real estate marketing strategist. Create a complete Listing Launch Bundle for a ${type} in ${n} targeting ${aud}. Details: ${stats}. Key feature and CTA: ${feat}. Tone: ${tone}. Goal: ${goal}.\n\nProduce:\n1. MLS-friendly listing description\n2. Zillow/Realtor.com portal description\n3. Instagram caption with hashtags\n4. 30-second Reel script\n5. Email to sphere of influence\n6. Open house invitation\n7. Seller update text message\n\n${compliance}`;
-        }
-        function generateCustomPrompt() {
-            const asset = document.getElementById("asset-type").value;
-            const type = document.getElementById("prop-type").value;
-            const aud = document.getElementById("target-aud").value;
-            const feat = document.getElementById("prop-feature").value;
-            const n = document.getElementById("neighborhood").value || "[Neighborhood]";
-            const stats = document.getElementById("property-stats").value || "[Price / beds / baths]";
-            const tone = document.getElementById("tone").value;
-            const goal = document.getElementById("agent-goal").value || "[Agent goal]";
-            const text = asset === "Listing Launch Bundle" ? buildBundle(type, aud, feat, n, stats, tone, goal) : `Act as a senior real estate marketing strategist. Create a ${tone} ${asset} for a ${type} in ${n} targeting ${aud}. Include these details: ${stats}. Highlight and call-to-action: ${feat}. Goal: ${goal}. Make it practical, polished, and ready for an agent to adapt. ${compliance}`;
-            document.getElementById("prompt-output").innerText = text;
-            updateResourcePanel(asset);
-        }
-        function updateResourcePanel(asset) {
-            const [title, copy] = resourceMap[asset] || resourceMap["Listing Description"];
-            document.getElementById('resource-title').innerText = title;
-            document.getElementById('resource-copy').innerText = copy;
-        }
-        function showToast(message = 'Copied to clipboard') {
-            const toast = document.getElementById('toast');
-            toast.innerText = message; toast.classList.add('active');
-            setTimeout(() => toast.classList.remove('active'), 1800);
-        }
-        function copyOutput() {
-            navigator.clipboard.writeText(document.getElementById("prompt-output").innerText);
-            const btn = document.getElementById("copy-text"); btn.innerText = "Copied!"; showToast();
-            setTimeout(() => { btn.innerText = "Copy Prompt"; }, 1800);
-        }
-        function bindCopyButtons() {
-            document.querySelectorAll('.copy-prompt-btn').forEach(btn => btn.addEventListener('click', () => {
-                const prompt = promptData.find(p => String(p.id) === btn.dataset.promptId)?.prompt || '';
-                navigator.clipboard.writeText(prompt);
-                const label = btn.querySelector('span'); label.innerText = 'Copied!'; showToast();
-                setTimeout(() => label.innerText = 'Copy Prompt', 1800);
-            }));
-        }
-        function filterCategory(cat) {
-            document.querySelectorAll('.cat-btn').forEach(btn => { btn.className = `cat-btn ${btn.dataset.cat === cat ? 'btn-forest' : 'btn-sand'} text-xs`; });
-            renderPrompts(cat === 'all' ? promptData : promptData.filter(p => p.category === cat), cat);
-        }
-        function handleSignup(event) { event.preventDefault(); showToast('Plan request captured — connect your email provider next'); event.target.reset(); }
-        function openModal(id) { const el = document.getElementById(id); if (el) el.classList.add('active'); }
-        function closeModal(id) { const el = document.getElementById(id); if (el) el.classList.remove('active'); }
-        document.querySelectorAll('.cat-btn').forEach(btn => btn.addEventListener('click', () => filterCategory(btn.dataset.cat)));
-        document.querySelectorAll('.playbook-btn').forEach(btn => btn.addEventListener('click', () => { document.getElementById('asset-type').value = btn.dataset.asset; document.getElementById('prop-feature').value = btn.dataset.feature; generateCustomPrompt(); document.getElementById('interactive-builder').scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
-        document.getElementById('asset-type').addEventListener('change', e => updateResourcePanel(e.target.value));
-        renderPrompts(promptData);
-    </script>
+  applyProceduralTheme(currentCase.name);
+
+  document.getElementById('playArea').style.display = 'flex';
+  document.getElementById('results').classList.remove('active');
+  document.getElementById('categoryTag').textContent = currentCase.name;
+  document.getElementById('caseNo').textContent = `CASE #${caseCount}`;
+  renderState();
+}
+
+function renderState() {
+  document.getElementById('clueNum').textContent = `CLUE ${clueIdx + 1} OF 5 (${(5 - clueIdx) * 20} PTS)`;
+  document.getElementById('clueText').textContent = currentCase.clues[clueIdx];
+  
+  const slotsContainer = document.getElementById('wordSlots');
+  slotsContainer.innerHTML = '';
+  for (let i = 0; i < currentCase.target.length; i++) {
+    const slot = document.createElement('div');
+    slot.className = 'slot' + (revealedLetters[i] ? ' filled' : '');
+    slot.textContent = revealedLetters[i] ? currentCase.target[i] : '';
+    slotsContainer.appendChild(slot);
+  }
+
+  document.getElementById('historyList').innerHTML = history.map(h => `<div class="history-item">❌ Guessed: "${h}"</div>`).join('');
+}
+
+function triggerStamp(text, isCorrect, cb) {
+  const stamp = document.getElementById('stamp');
+  stamp.textContent = text;
+  stamp.className = `stamp show ${isCorrect ? 'solved' : 'wrong'}`;
+  playSound(isCorrect ? 'correct' : 'wrong');
+  setTimeout(() => {
+    stamp.className = 'stamp';
+    if (cb) cb();
+  }, 700);
+}
+
+function handleGuess() {
+  const input = document.getElementById('guessInput');
+  const val = input.value.trim().toUpperCase();
+  if (!val) return;
+
+  // OPENS NEW DIRECT AD LINK ON GUESS CLICK
+  window.open("https://omg10.com/4/11445748", "_blank");
+
+  if (val === currentCase.target) {
+    triggerStamp('SOLVED', true, () => finishGame(true));
+  } else {
+    triggerStamp('WRONG', false, () => {
+      history.push(val);
+      input.value = '';
+      if (clueIdx < 4) {
+        clueIdx++;
+        const unrevealed = revealedLetters.map((r, i) => r ? -1 : i).filter(i => i !== -1);
+        if (unrevealed.length > 0) revealedLetters[unrevealed[0]] = true;
+        renderState();
+      } else {
+        finishGame(false);
+      }
+    });
+  }
+}
+
+function handleWatchAdReveal() {
+  // OPENS DIRECT AD LINK 1 FOR HINT
+  window.open("https://omg10.com/4/1144828", "_blank");
+
+  if (clueIdx < 4) {
+    clueIdx++;
+    const unrevealed = revealedLetters.map((r, i) => r ? -1 : i).filter(i => i !== -1);
+    if (unrevealed.length > 0) revealedLetters[unrevealed[0]] = true;
+    renderState();
+  } else {
+    const unrevealed = revealedLetters.map((r, i) => r ? -1 : i).filter(i => i !== -1);
+    if (unrevealed.length > 0) {
+      revealedLetters[unrevealed[0]] = true;
+      renderState();
+    }
+  }
+}
+
+function finishGame(won) {
+  document.getElementById('playArea').style.display = 'none';
+  const res = document.getElementById('results');
+  res.classList.add('active');
+  const points = won ? (5 - clueIdx) * 20 : 0;
+  if (won) {
+    score += points;
+    streak++;
+    document.getElementById('resTitle').textContent = 'CASE SOLVED!';
+    document.getElementById('resSub').textContent = `You unlocked the file on clue ${clueIdx + 1} and scored ${points} PTS.`;
+  } else {
+    streak = 1;
+    document.getElementById('resTitle').textContent = 'CASE CLOSED';
+    document.getElementById('resSub').textContent = `The target was ${currentCase.target}. Better luck on the next case!`;
+  }
+  document.getElementById('scoreBadge').textContent = `⭐ ${score} PTS`;
+  document.getElementById('streakBadge').textContent = `🔥 ${streak} STREAK`;
+}
+
+document.getElementById('guessBtn').addEventListener('click', handleGuess);
+document.getElementById('guessInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') handleGuess(); });
+document.getElementById('adBtn').addEventListener('click', handleWatchAdReveal);
+document.getElementById('nextCaseBtn').addEventListener('click', loadNextInfiniteCase);
+
+document.getElementById('shareBtn').addEventListener('click', () => {
+  navigator.clipboard.writeText(`5 CLUES Case #${caseCount} 🟩\nScore: ${score} PTS\nPlay now: https://5cluesgame.netlify.app`);
+  alert('Result copied to clipboard!');
+});
+
+loadNextInfiniteCase();
+</script>
 </body>
 </html>
